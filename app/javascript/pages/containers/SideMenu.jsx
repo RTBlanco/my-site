@@ -6,7 +6,6 @@ const SideMenu = () => {
   const sidebar = useRef(null)
 
   const elementToggleFunc = (elem) => { 
-    // console.log(elem)
     elem.classList.toggle("active"); 
   }
 
