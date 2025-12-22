@@ -1,11 +1,22 @@
+import myAvatar from "./my-avatar.png"
+import { useRef } from "react"
+
 const SideMenu = () => {
+
+  const sidebar = useRef(null)
+
+  const elementToggleFunc = (elem) => { 
+    // console.log(elem)
+    elem.classList.toggle("active"); 
+  }
+
   return (
-    <aside className="sidebar" data-sidebar>
+    <aside className="sidebar" data-sidebar ref={sidebar}>
 
       <div className="sidebar-info">
 
         <figure className="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80" />
+          <img src={myAvatar} alt="Richard hanrick" width="80" />
         </figure>
 
         <div className="info-content">
@@ -14,7 +25,7 @@ const SideMenu = () => {
           <p className="title">Web developer</p>
         </div>
 
-        <button className="info_more-btn" data-sidebar-btn>
+        <button className="info_more-btn" onClick={() => elementToggleFunc(sidebar.current)} data-sidebar-btn>
           <span>Show Contacts</span>
 
           <ion-icon name="chevron-down"></ion-icon>
