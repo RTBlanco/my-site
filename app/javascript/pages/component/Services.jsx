@@ -3,7 +3,7 @@ import IconDev from "../../images/icon-dev.svg"
 import IconApp from "../../images/icon-app.svg"
 import IconPhoto from "../../images/icon-photo.svg"
 
-const Service = () => {
+const Services = () => {
   const serviceItems = [
     {
       title: "Web Design",
@@ -61,4 +61,4 @@ const Service = () => {
   )
 }
 
-export default Service;
+export default Services;

@@ -4,7 +4,7 @@ import Avatar2 from "../../images/avatar-2.png"
 import Avatar3 from "../../images/avatar-3.png"
 import Avatar4 from "../../images/avatar-4.png"
 
-const Testimonial = () => {
+const Testimonials = () => {
   const testimonialsItems = [
     {
       name: "Daniel Lewis",
@@ -62,4 +62,4 @@ const Testimonial = () => {
   )
 }
 
-export default Testimonial;
+export default Testimonials;
