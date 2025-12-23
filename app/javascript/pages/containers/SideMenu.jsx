@@ -75,7 +75,7 @@ const SideMenu = () => {
             <div className="contact-info">
               <p className="contact-title">Birthday</p>
 
-              <time datetime="1982-06-23">June 23, 1982</time>
+              <time dateTime="1982-06-23">June 23, 1982</time>
             </div>
 
           </li>
