@@ -4,14 +4,14 @@ import Resume from "./Resume";
 import { useState } from "react";
 
 const MainContent = () => {
-  const [activeState, setActiveState] = useState(true)
+  const [pageState, setPageState] = useState("About")
 
-
+  // its going to be slow since everything is technicall rendering 
   return(
     <div className="main-content">
-      <Navbar />
-      {/* <About /> */}
-      <Resume />
+      <Navbar pageState={pageState} setPageState={setPageState} />
+      <About active={pageState == "About"}/>
+      <Resume active={pageState == "Resume"}/>
     </div>
   )
 }
