@@ -10,7 +10,7 @@ const MainContent = () => {
   return(
     <div className="main-content">
       <Navbar />
-      <About />
+      {/* <About /> */}
       <Resume />
     </div>
   )
