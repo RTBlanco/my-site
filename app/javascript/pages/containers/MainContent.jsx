@@ -6,7 +6,8 @@ import { useState } from "react";
 const MainContent = () => {
   const [pageState, setPageState] = useState("About")
 
-  // its going to be slow since everything is technicall rendering
+  // could use a Link library but it would be overkill of a package
+  // need to set up routes 
   
   const renderPageContent = () => {
     switch (pageState) {
