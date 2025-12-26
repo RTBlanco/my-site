@@ -11,7 +11,7 @@ import { useState } from "react"
 
 
 const Portfolio = () => {
-  const projects = [
+  const projectsData = [
     {
       id: 1,
       title: "Finance",
@@ -117,19 +117,24 @@ const Portfolio = () => {
 
   const listOptions = ["All", "Web design", "Applications", "Web development"]
 
-  const [filteredProjectsState, setFilteredProjectState] = useState(["Web design", "Applications", "Web development"])
+  const [selOption, setSelOption] = useState("All")
+
 
   const renderFilerList = () => (
     listOptions.map((filter, index) => (
       <li key={index} className="filter-item">
-        <button className={filter === "All" ?`active` : ""} data-filter-btn>{filter}</button>
+        <button onClick={() => setSelOption(filter)} className={filter === selOption ?`active` : ""} data-filter-btn>{filter}</button>
       </li>
     ))
   )
 
-  const renderProjects = () => (
-    projects.map(project => (
-      <li key={project.id} className="project-item  active" data-filter-item data-category={project.category}>
+  const renderProjects = () => {
+    console.log(selOption)
+
+    const filteredProjects =  projectsData.filter(item => selOption === "All" || item.displayCategory === selOption)
+   
+    return filteredProjects.map(project => (
+      <li key={project.id} className="project-item active" data-filter-item data-category={project.category}>
         <a href={project.link}>
 
           <figure className="project-img">
@@ -147,7 +152,7 @@ const Portfolio = () => {
         </a>
       </li>
     ))
-  )
+  }
 
   return (
     <article className="portfolio active" data-page="portfolio">
@@ -176,7 +181,7 @@ const Portfolio = () => {
 
           </button>
 
-          <ul className="select-list">
+          {/* <ul className="select-list">
 
             <li className="select-item">
               <button data-select-item>All</button>
@@ -194,7 +199,7 @@ const Portfolio = () => {
               <button data-select-item>Web development</button>
             </li>
 
-          </ul>
+          </ul> */}
 
         </div>
 
