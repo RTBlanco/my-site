@@ -7,6 +7,7 @@ import project6 from "../../images/project-6.png"
 import project7 from "../../images/project-7.png"
 import project8 from "../../images/project-8.jpg"
 import project9 from "../../images/project-9.png"
+import { useState } from "react"
 
 
 const Portfolio = () => {
@@ -114,6 +115,7 @@ const Portfolio = () => {
 
   const filterList = ["All", "Web design", "Applications", "Web development"]
 
+  const [filteredProjectsState, setFilteredProjectState] = useState([])
   const renderFilerList = () => (
     filterList.map((filter, index) => (
       <li key={index} className="filter-item">
