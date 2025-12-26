@@ -2,8 +2,9 @@ import Navbar from "../component/Navbar";
 import About from "./About";
 import Resume from "./Resume";
 import Portfolio from "./Portfolio";
-import { useState } from "react";
 import Blog from "./Blog";
+import Contact from "./Contact";
+import { useState } from "react";
 
 const MainContent = () => {
   const [pageState, setPageState] = useState("About")
@@ -21,10 +22,12 @@ const MainContent = () => {
       return <Portfolio />;
     case 'Blog':
       return <Blog />
+    case "Contact": 
+      return <Contact />
     default:
       return <About  />;
   }
-  
+
   }
   return(
     <div className="main-content">
