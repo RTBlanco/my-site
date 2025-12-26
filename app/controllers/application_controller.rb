@@ -5,4 +5,10 @@ class ApplicationController < ActionController::Base
   def index
     render inertia: "index"
   end
+
+  def about
+  end
+
+  def resume
+  end
 end
