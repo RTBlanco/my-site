@@ -2,8 +2,8 @@ const Navbar = ({pageState, setPageState}) => {
   const renderlinks = () => {
     const links = ["About", "Resume", "Portfolio", "Blog", "Contact"]
     
-    return links.map( link =>  (
-      <li className="navbar-item">
+    return links.map( (link, index) =>  (
+      <li key={index} className="navbar-item">
         <button 
           className={`navbar-link ${link == pageState ? "active" : "" }`} 
           onClick={() => setPageState(link)} 

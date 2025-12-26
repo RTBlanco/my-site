@@ -1,6 +1,7 @@
 import Navbar from "../component/Navbar";
 import About from "./About";
 import Resume from "./Resume";
+import Portfolio from "./Portfolio";
 import { useState } from "react";
 
 const MainContent = () => {
@@ -15,6 +16,8 @@ const MainContent = () => {
       return <About  />;
     case 'Resume':
       return <Resume />;
+    case 'Portfolio':
+      return <Portfolio />;
     default:
       return <About  />;
   }
