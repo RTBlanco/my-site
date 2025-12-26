@@ -113,11 +113,14 @@ const Portfolio = () => {
     },
   ];
 
-  const filterList = ["All", "Web design", "Applications", "Web development"]
+  // dynamically gather all the categorys
 
-  const [filteredProjectsState, setFilteredProjectState] = useState([])
+  const listOptions = ["All", "Web design", "Applications", "Web development"]
+
+  const [filteredProjectsState, setFilteredProjectState] = useState(["Web design", "Applications", "Web development"])
+
   const renderFilerList = () => (
-    filterList.map((filter, index) => (
+    listOptions.map((filter, index) => (
       <li key={index} className="filter-item">
         <button className={filter === "All" ?`active` : ""} data-filter-btn>{filter}</button>
       </li>
