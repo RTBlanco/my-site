@@ -3,6 +3,7 @@ import About from "./About";
 import Resume from "./Resume";
 import Portfolio from "./Portfolio";
 import { useState } from "react";
+import Blog from "./Blog";
 
 const MainContent = () => {
   const [pageState, setPageState] = useState("About")
@@ -18,9 +19,12 @@ const MainContent = () => {
       return <Resume />;
     case 'Portfolio':
       return <Portfolio />;
+    case 'Blog':
+      return <Blog />
     default:
       return <About  />;
   }
+  
   }
   return(
     <div className="main-content">
