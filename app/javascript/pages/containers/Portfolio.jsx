@@ -180,27 +180,6 @@ const Portfolio = () => {
             </div>
 
           </button>
-
-          {/* <ul className="select-list">
-
-            <li className="select-item">
-              <button data-select-item>All</button>
-            </li>
-
-            <li className="select-item">
-              <button data-select-item>Web design</button>
-            </li>
-
-            <li className="select-item">
-              <button data-select-item>Applications</button>
-            </li>
-
-            <li className="select-item">
-              <button data-select-item>Web development</button>
-            </li>
-
-          </ul> */}
-
         </div>
 
         <ul className="project-list">
