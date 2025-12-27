@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   inertia "About" => "containers/About"
   inertia "Resume" => "containers/Resume"
   inertia "Portfolio" => "containers/Portfolio"
+  inertia "Blogs" => "containers/Blogs"
   inertia "Blog" => "containers/Blog"
   inertia "Contact" => "containers/Contact"
 
