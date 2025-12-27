@@ -7,8 +7,18 @@ class ApplicationController < ActionController::Base
   end
 
   def about
+    render inertia: "containers/About"
   end
 
   def resume
+    render inertia: "containers/Resume"
+  end
+
+  def portfolio
+    render inertia: "containers/Porfolio"
+  end
+
+  def blog
+    render inertia: "containers/Blog"
   end
 end

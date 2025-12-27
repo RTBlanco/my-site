@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  inertia "resume" => "Resume"
+  inertia "About" => "containers/About"
+  inertia "Resume" => "containers/Resume"
+  inertia "Portfolio" => "containers/Portfolio"
+  inertia "Blog" => "containers/Blog"
+
   root "application#index"
 end

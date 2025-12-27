@@ -8,7 +8,7 @@ import Contact from "./containers/Contact";
 import { useState } from "react";
 
 
-export default function index() {
+export default function Layout({children}) {
   const [pageState, setPageState] = useState("About")
 
   const renderPageContent = () => {
@@ -34,7 +34,8 @@ export default function index() {
       <SideMenu/>
       <div className="main-content">
         <Navbar pageState={pageState} setPageState={setPageState} />
-        {renderPageContent()}
+        {/* {renderPageContent()} */}
+        {children}
       </div>
     </main>
   )
