@@ -3,7 +3,7 @@ import Navbar from "./component/Navbar";
 import About from "./containers/About";
 import Resume from "./containers/Resume";
 import Portfolio from "./containers/Portfolio";
-import Blog from "./containers/Blog";
+import Blogs from "./containers/Blogs";
 import Contact from "./containers/Contact";
 import { useState } from "react";
 
@@ -20,7 +20,7 @@ export default function Layout({children}) {
       case 'Portfolio':
         return <Portfolio />;
       case 'Blog':
-        return <Blog />
+        return <Blogs />
       case "Contact": 
         return <Contact />
       default:
