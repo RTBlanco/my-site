@@ -2,7 +2,7 @@ import Navbar from "../component/Navbar";
 import About from "./About";
 import Resume from "./Resume";
 import Portfolio from "./Portfolio";
-import Blog from "./Blog";
+import Blog from "./Blogs";
 import Contact from "./Contact";
 import { useState } from "react";
 
