@@ -1,15 +1,20 @@
+import { Link } from '@inertiajs/react'
+
 const Navbar = ({pageState, setPageState}) => {
   const renderlinks = () => {
     const links = ["About", "Resume", "Portfolio", "Blog", "Contact"]
     
     return links.map( (link, index) =>  (
       <li key={index} className="navbar-item">
-        <button 
-          className={`navbar-link ${link == pageState ? "active" : "" }`} 
-          onClick={() => setPageState(link)} 
-          data-nav-link>
+        <Link
+          className={`navbar-link ${link == pageState ? "active" : "" }`}
+          onClick={() => setPageState(link)}
+          as="button"
+          href={`/${link}`}
+          data-nav-links
+          >
             {link}
-          </button>
+        </Link>
       </li>
     ))
 
