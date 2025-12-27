@@ -2,7 +2,7 @@ import { Link } from '@inertiajs/react'
 
 const Navbar = ({pageState, setPageState}) => {
   const renderlinks = () => {
-    const links = ["About", "Resume", "Portfolio", "Blog", "Contact"]
+    const links = ["About", "Resume", "Portfolio", "Blogs", "Contact"]
     
     return links.map( (link, index) =>  (
       <li key={index} className="navbar-item">
