@@ -1,12 +1,41 @@
-// import cs from './index.module.css'
 import SideMenu from "./containers/SideMenu"
-import MainContent from "./containers/MainContent"
+import Navbar from "./component/Navbar";
+import About from "./containers/About";
+import Resume from "./containers/Resume";
+import Portfolio from "./containers/Portfolio";
+import Blog from "./containers/Blog";
+import Contact from "./containers/Contact";
+import { useState } from "react";
+
 
 export default function index() {
+  const [pageState, setPageState] = useState("About")
+
+  const renderPageContent = () => {
+      switch (pageState) {
+      case 'About':
+        return <About  />;
+      case 'Resume':
+        return <Resume />;
+      case 'Portfolio':
+        return <Portfolio />;
+      case 'Blog':
+        return <Blog />
+      case "Contact": 
+        return <Contact />
+      default:
+        return <About  />;
+    }
+  }
+
+
   return (
     <main>
       <SideMenu/>
-      <MainContent />
+      <div className="main-content">
+        <Navbar pageState={pageState} setPageState={setPageState} />
+        {renderPageContent()}
+      </div>
     </main>
   )
 }
