@@ -82,26 +82,26 @@ const Blog = () => {
   const renderBlogs = () => {
 
     return blogPosts.map(blog => (
-      <li key={blog.id} class="blog-post-item">
+      <li key={blog.id} className="blog-post-item">
         <a href={blog.link}>
 
-          <figure class="blog-banner-box">
+          <figure className="blog-banner-box">
             <img src={blog.image} alt={blog.alt} loading="lazy" />
           </figure>
 
-          <div class="blog-content">
+          <div className="blog-content">
 
-            <div class="blog-meta">
-              <p class="blog-category">{blog.category}</p>
+            <div className="blog-meta">
+              <p className="blog-category">{blog.category}</p>
 
-              <span class="dot"></span>
+              <span className="dot"></span>
 
-              <time datetime={blog.dateISO}>{blog.dateLabel}</time>
+              <time dateTime={blog.dateISO}>{blog.dateLabel}</time>
             </div>
 
-            <h3 class="h3 blog-item-title">{blog.title}</h3>
+            <h3 className="h3 blog-item-title">{blog.title}</h3>
 
-            <p class="blog-text">
+            <p className="blog-text">
               {blog.excerpt}
             </p>
 
@@ -114,15 +114,15 @@ const Blog = () => {
 
 
   return (
-    <article class="blog active" data-page="blog">
+    <article className="blog active" data-page="blog">
 
       <header>
-        <h2 class="h2 article-title">Blog</h2>
+        <h2 className="h2 article-title">Blog</h2>
       </header>
 
-      <section class="blog-posts">
+      <section className="blog-posts">
 
-        <ul class="blog-posts-list">
+        <ul className="blog-posts-list">
 
           {renderBlogs()}
 
