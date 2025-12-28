@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   inertia "Blogs" => "containers/Blogs"
   inertia "Blog" => "containers/Blog"
   inertia "Contact" => "containers/Contact"
+  inertia "Admin" => "containers/Admin"
 
   root "application#index"
 end
