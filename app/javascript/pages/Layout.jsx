@@ -12,7 +12,7 @@ export default function Layout({children}) {
   const [pageState, setPageState] = useState("About")
 
   let linkSplit = window.location.href.split("/")
-  const currentRoute = linkSplit[linkSplit.length - 1]
+  const currentRoute = linkSplit[linkSplit.length - 2]
 
   const renderPageContent = () => {
       switch (pageState) {
@@ -36,7 +36,7 @@ export default function Layout({children}) {
     <main>
       <SideMenu/>
       <div className="main-content">
-        {currentRoute === "Admin" || <Navbar pageState={pageState} setPageState={setPageState} />}
+        {currentRoute === "admin" || <Navbar pageState={pageState} setPageState={setPageState} />}
         {children}
       </div>
     </main>
