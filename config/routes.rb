@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   inertia "Contact" => "containers/Contact"
   namespace :admin do
     inertia "dashboard" => "containers/admin/Admin"
-    inertia "login" => "containers/admin/Login"
+    inertia "login" => "containers/admin/AdminLogin"
   end
 
   root "application#index"
