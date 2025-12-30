@@ -8,6 +8,7 @@ const SideMenu = () => {
     title: "FullStack Software Engineer",
     birthday: "10/20/1997",
     location: "Boston, Mass, USA",
+    avatar: myAvatar,
     contact: {
       email: "ronnytoribio1@hotmail.com",
       phone: "12133522795"
@@ -26,13 +27,13 @@ const SideMenu = () => {
       <div className="sidebar-info">
 
         <figure className="avatar-box">
-          <img src={myAvatar} alt="Richard hanrick" width="80" />
+          <img src={userInfo.avatar} alt={userInfo.name} width="80" />
         </figure>
 
         <div className="info-content">
-          <h1 className="name" title="Richard hanrick">Richard hanrick</h1>
+          <h1 className="name" title={userInfo.name}>{userInfo.name}</h1>
 
-          <p className="title">Web developer</p>
+          <p className="title">{userInfo.title}</p>
         </div>
 
         <button className="info_more-btn" onClick={() => elementToggleFunc(sidebar.current)} data-sidebar-btn>
@@ -58,7 +59,7 @@ const SideMenu = () => {
             <div className="contact-info">
               <p className="contact-title">Email</p>
 
-              <a href="mailto:richard@example.com" className="contact-link">richard@example.com</a>
+              <a href={`mailto:${userInfo.contact.email}`} className="contact-link">{userInfo.contact.email}</a>
             </div>
 
           </li>
@@ -86,7 +87,7 @@ const SideMenu = () => {
             <div className="contact-info">
               <p className="contact-title">Birthday</p>
 
-              <time dateTime="1982-06-23">June 23, 1982</time>
+              <time dateTime="1982-06-23">{userInfo.birthday}</time>
             </div>
 
           </li>
@@ -100,7 +101,7 @@ const SideMenu = () => {
             <div className="contact-info">
               <p className="contact-title">Location</p>
 
-              <address>Sacramento, California, USA</address>
+              <address>{userInfo.location}</address>
             </div>
 
           </li>
