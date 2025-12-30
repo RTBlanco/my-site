@@ -11,6 +11,9 @@ import { useState } from "react";
 export default function Layout({children}) {
   const [pageState, setPageState] = useState("About")
 
+  let linkSplit = window.location.href.split("/")
+  const currentRoute = linkSplit[linkSplit.length - 1]
+
   const renderPageContent = () => {
       switch (pageState) {
       case 'About':
@@ -28,14 +31,12 @@ export default function Layout({children}) {
     }
   }
 
-
+  
   return (
     <main>
       <SideMenu/>
       <div className="main-content">
-        {/* only display Navbar if not on Admin panel */}
-        <Navbar pageState={pageState} setPageState={setPageState} />
-        {/* {renderPageContent()} */}
+        {currentRoute === "Admin" || <Navbar pageState={pageState} setPageState={setPageState} />}
         {children}
       </div>
     </main>
