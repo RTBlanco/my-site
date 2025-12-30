@@ -33,6 +33,7 @@ export default function Layout({children}) {
     <main>
       <SideMenu/>
       <div className="main-content">
+        {/* only display Navbar if not on Admin panel */}
         <Navbar pageState={pageState} setPageState={setPageState} />
         {/* {renderPageContent()} */}
         {children}
