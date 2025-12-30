@@ -3,7 +3,7 @@ export default function Admin() {
     <article className="admin active" data-page="admin">
 
       <header>
-        <h2 className="h2 article-title">Admin</h2>
+        <h2 className="h2 article-title">Dashboard</h2>
       </header>
 
       <section className="blog-posts">
