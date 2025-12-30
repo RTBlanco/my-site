@@ -12,6 +12,11 @@ export default function Admin() {
 
           {/* {renderBlogs()} */}
 
+          {/* 
+            - in the admin panel make it display two tables, one for projects and one for blogs
+            - when clicking on blog have it open its show page but make it editable like Medium Blog
+            
+           */}
         </ul>
 
       </section>
