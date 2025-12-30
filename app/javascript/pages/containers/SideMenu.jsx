@@ -3,6 +3,17 @@ import { useRef } from "react"
 
 const SideMenu = () => {
 
+  const userInfo = {
+    name: "Ronny Toribio Blanco",
+    title: "FullStack Software Engineer",
+    birthday: "10/20/1997",
+    location: "Boston, Mass, USA",
+    contact: {
+      email: "ronnytoribio1@hotmail.com",
+      phone: "12133522795"
+    }
+  }
+
   const sidebar = useRef(null)
 
   const elementToggleFunc = (elem) => { 
