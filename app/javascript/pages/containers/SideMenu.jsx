@@ -3,6 +3,7 @@ import { useRef } from "react"
 
 const SideMenu = () => {
 
+  // data should look somthing like this
   const userInfo = {
     name: "Ronny Toribio Blanco",
     title: "FullStack Software Engineer",
