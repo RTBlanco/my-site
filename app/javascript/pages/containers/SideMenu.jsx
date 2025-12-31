@@ -12,7 +12,7 @@ const SideMenu = () => {
     avatar: myAvatar,
     contact: {
       email: "ronnytoribio1@hotmail.com",
-      phone: "12133522795"
+      phone: "12133522795" // dont use phone number
     }
   }
 
@@ -65,7 +65,8 @@ const SideMenu = () => {
 
           </li>
 
-          <li className="contact-item">
+          {/* not useing Phone number */}
+          {/* <li className="contact-item">
 
             <div className="icon-box">
               <ion-icon name="phone-portrait-outline"></ion-icon>
@@ -77,7 +78,7 @@ const SideMenu = () => {
               <a href="tel:+12133522795" className="contact-link">+1 (213) 352-2795</a>
             </div>
 
-          </li>
+          </li> */}
 
           <li className="contact-item">
 
