@@ -9,7 +9,7 @@ const SideMenu = () => {
     title: "FullStack Software Engineer",
     birthday: "10/20/1997",
     location: "Boston, Mass, USA",
-    avatar: myAvatar,
+    avatar: myAvatar, // the avatar rarely changes so no need to save 
     contact: {
       email: "ronnytoribio1@hotmail.com",
       phone: "12133522795" // dont use phone number
