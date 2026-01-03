@@ -5,8 +5,8 @@ const SideMenu = () => {
 
   // data should look somthing like this
   const userInfo = {
-    name: "Ronny Toribio Blanco",
-    title: "FullStack Software Engineer",
+    name: "Ronny Toribio Blanco", // looks bit weird being to long 
+    title: "FullStack Software Engineer", // this doesnt fit correctly on the screen when viewed on tablets let update it
     birthday: "10/20/1997",
     location: "Boston, Mass, USA",
     avatar: myAvatar, // the avatar rarely changes so no need to save 
