@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   def index
-    render inertia: "index"
+    render inertia: "containers/About"
   end
 
   def about
