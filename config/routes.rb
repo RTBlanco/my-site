@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :projects
-  resources :blogs
+  resources :blogs do
+    inertia :blog
+  end
   devise_for :admins
 
   # Redirect to localhost from 127.0.0.1 to use same IP address with Vite server
@@ -25,7 +27,7 @@ Rails.application.routes.draw do
   inertia "Resume" => "containers/Resume"
   inertia "Portfolio" => "containers/Portfolio"
   inertia "Blogs" => "containers/blogs/Blogs"
-  inertia "Blog" => "containers/blogs/Blog"
+  # inertia "Blog" => "containers/blogs/Blog"
   inertia "Contact" => "containers/Contact"
   namespace :admin do
     inertia "dashboard" => "containers/admin/Admin"

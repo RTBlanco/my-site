@@ -5,6 +5,8 @@ import blog4 from "../../../images/blog-4.jpg"
 import blog5 from "../../../images/blog-5.jpg"
 import blog6 from "../../../images/blog-6.jpg"
 
+import { Link } from "@inertiajs/react"
+
 const Blogs = () => {
   const blogPosts = [
     {
@@ -16,7 +18,7 @@ const Blogs = () => {
       excerpt: "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
       image: blog1,
       alt: "Design conferences in 2022",
-      link: "#",
+      link: "/blogs/1",
     },
     {
       id: 2,
@@ -83,7 +85,7 @@ const Blogs = () => {
 
     return blogPosts.map(blog => (
       <li key={blog.id} className="blog-post-item">
-        <a href={blog.link}>
+        <Link href={blog.link}>
 
           <figure className="blog-banner-box">
             <img src={blog.image} alt={blog.alt} loading="lazy" />
@@ -107,7 +109,7 @@ const Blogs = () => {
 
           </div>
 
-        </a>
+        </Link>
       </li>
     ))
   }
