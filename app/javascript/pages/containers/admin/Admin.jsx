@@ -1,4 +1,4 @@
-import ProjectsTable from "../../component/tables/ProjectsTable"
+import Table from "../../component/tables/Table"
 
 export default function Admin() {
 
@@ -21,10 +21,12 @@ export default function Admin() {
 
       <section className="dashboard">
 
-        <ProjectsTable>
+        <Table name={"projects"}>
           {projects}
-        </ProjectsTable>
-        
+        </Table>
+        <Table name={"Blogs"}>
+          {projects}
+        </Table>
       </section>
 
     </article>
