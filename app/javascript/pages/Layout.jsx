@@ -1,10 +1,5 @@
 import SideMenu from "./containers/SideMenu"
 import Navbar from "./component/Navbar";
-import About from "./containers/About";
-import Resume from "./containers/Resume";
-import Portfolio from "./containers/Portfolio";
-import Blogs from "./containers/blogs/Blogs";
-import Contact from "./containers/Contact";
 import { useState } from "react";
 
 
