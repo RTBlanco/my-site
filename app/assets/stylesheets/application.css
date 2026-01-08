@@ -1891,3 +1891,141 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+.table-wrapper {
+  background: #252525;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #2a2a2a;
+}
+
+th {
+  padding: 20px 24px;
+  text-align: left;
+  font-weight: 600;
+  color: #b0b0b0;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #333;
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #2a2a2a;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+td {
+  padding: 24px;
+  color: #e0e0e0;
+}
+
+.project-cell {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.project-image {
+  width: 80px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #333;
+}
+
+.project-info h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.project-info p {
+  color: #888;
+  font-size: 0.875rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.813rem;
+  font-weight: 500;
+}
+
+.tag.webdev {
+  background: rgba(76, 175, 80, 0.15);
+  color: #4caf50;
+}
+
+.tag.design {
+  background: rgba(156, 39, 176, 0.15);
+  color: #ab47bc;
+}
+
+.tag.app {
+  background: rgba(33, 150, 243, 0.15);
+  color: #42a5f5;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.813rem;
+  font-weight: 500;
+}
+
+.status.completed {
+  background: rgba(76, 175, 80, 0.15);
+  color: #4caf50;
+}
+
+.status.completed::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4caf50;
+}
+
+.status.progress {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+.status.progress::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffc107;
+}
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 800px;
+  }
+}
