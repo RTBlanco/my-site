@@ -11,13 +11,13 @@ const AdminLogin = () => {
         <form action="#" className="form" data-form>
 
           <div className="input-wrapper">
-            <input type="text" name="email" className="form-input" placeholder="Email" required data-form-input />
+            <input type="email" name="email" className="form-input" placeholder="Email" required data-form-input />
 
-            <input type="email" name="password" className="form-input" placeholder="Password" required data-form-input />
+            <input type="password" name="password" className="form-input" placeholder="Password" required data-form-input />
           </div>
 
           <button className="form-btn" type="submit" disabled data-form-btn>
-            <ion-icon name="paper-plane"></ion-icon>
+            <ion-icon name="enter-outline"></ion-icon>
             <span>Login</span>
           </button>
 
