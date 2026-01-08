@@ -14,24 +14,6 @@ export default function Layout({children}) {
   let linkSplit = window.location.href.split("/")
   const currentRoute = linkSplit[linkSplit.length - 2]
 
-  const renderPageContent = () => {
-      switch (pageState) {
-      case 'About':
-        return <About  />;
-      case 'Resume':
-        return <Resume />;
-      case 'Portfolio':
-        return <Portfolio />;
-      case 'Blog':
-        return <Blogs />
-      case "Contact": 
-        return <Contact />
-      default:
-        return <About  />;
-    }
-  }
-
-  
   return (
     <main>
       <SideMenu/>
