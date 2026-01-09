@@ -18,7 +18,7 @@ const Blogs = () => {
       excerpt: "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
       image: blog1,
       alt: "Design conferences in 2022",
-      link: "/blogs/1",
+      link: "/Blogs/1",
     },
     {
       id: 2,
