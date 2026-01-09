@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :projects
   resources :blogs do
-    inertia :blog
+    # inertia :blog
   end
   devise_for :admins
 
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   inertia "About" => "containers/About"
   inertia "Resume" => "containers/Resume"
   inertia "Portfolio" => "containers/Portfolio"
-  inertia "Blogs" => "containers/blogs/Blogs"
+  # inertia "Blogs" => "containers/blogs/Blogs"
   # inertia "Blog" => "containers/blogs/Blog"
   inertia "Contact" => "containers/Contact"
   namespace :admin do

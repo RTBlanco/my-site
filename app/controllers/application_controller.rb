@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     render inertia: "containers/Porfolio"
   end
 
-  def blog
-    render inertia: "containers/Blog"
-  end
+  # def blog
+  #   render inertia: "containers/Blog"
+  # end
 end
