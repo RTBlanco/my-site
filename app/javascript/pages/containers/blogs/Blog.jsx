@@ -1,6 +1,9 @@
 import blog1 from "../../../images/blog-1.jpg"
+import { useState } from "react"
 
 const Blog = () => {
+  const [editButton, setEditButton] = useState(true)
+
 
   const blog = {
     id: 1,
@@ -14,6 +17,28 @@ const Blog = () => {
     link: "#",
   }
 
+  const editBlog = () => {
+    return(
+      <div className="blog-content">
+
+        <div className="blog-meta">
+          <input className="blog-category" value={blog.category} />
+
+          <span className="dot"></span>
+
+          <time dateTime={blog.dateISO}>{blog.dateLabel}</time>
+        </div>
+
+        <input className="h3 blog-item-title" value={blog.title} />
+
+        <textarea className="blog-text" name="" id="">
+          {blog.excerpt}
+        </textarea>
+
+      </div>
+    )
+  }
+
   return (
     
     <article className="blog active" data-page="blog">
@@ -25,28 +50,33 @@ const Blog = () => {
       <section className="blog-posts">
 
         <div>
-
+          <button onClick={() => setEditButton(!editButton)}>edit</button>
           <figure className="blog-banner-box">
             <img src={blog.image} alt="image" loading="lazy" />
           </figure>
 
-          <div className="blog-content">
+          { editButton ? (
+              <div className="blog-content">
 
-            <div className="blog-meta">
-              <p className="blog-category">{blog.category}</p>
+                <div className="blog-meta">
+                  <p className="blog-category">{blog.category}</p>
 
-              <span className="dot"></span>
+                  <span className="dot"></span>
 
-              <time dateTime={blog.dateISO}>{blog.dateLabel}</time>
-            </div>
+                  <time dateTime={blog.dateISO}>{blog.dateLabel}</time>
+                </div>
 
-            <h3 className="h3 blog-item-title">{blog.title}</h3>
+                <h3 className="h3 blog-item-title">{blog.title}</h3>
 
-            <p className="blog-text">
-              {blog.excerpt}
-            </p>
+                <p className="blog-text">
+                  {blog.excerpt}
+                </p>
 
-          </div>
+              </div>
+            ) : (
+              editBlog()
+            )
+          }
 
         </div>
 
