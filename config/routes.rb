@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :projects
-  resources :blogs do
-    # inertia :blog
-  end
+  resources :blogs, path: :Blogs
   devise_for :admins
 
   # Redirect to localhost from 127.0.0.1 to use same IP address with Vite server
