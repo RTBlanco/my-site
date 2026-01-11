@@ -4,6 +4,8 @@ class BlogsController < ApplicationController
   end
 
   def index
+
+    # render all the blogs
     render inertia: "containers/blogs/Blogs"
   end
 end
