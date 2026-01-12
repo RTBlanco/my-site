@@ -9,7 +9,7 @@ class BlogsController < ApplicationController
 
   def index
     blogs = Blog.all.map do |blog|
-      blog.serialized
+      blog.serialized.merge({ "image" => url_for(blog.image) })
     end
 
     # render all the blogs
