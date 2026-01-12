@@ -18,7 +18,18 @@ class ApplicationController < ActionController::Base
     render inertia: "containers/Porfolio"
   end
 
-  # def blog
-  #   render inertia: "containers/Blog"
-  # end
+  def dashboard
+    blogs = Blog.all.map do |blog|
+      {
+        id: blog.id,
+        title: blog.title,
+        category: blog.category,
+        dateISO: blog.created_at.strftime("%F"),
+        dateLabel: blog.created_at.strftime("%b %d, %Y"),
+        content: blog.content,
+        image: blog.image
+      }
+    end
+    render inertia: "containers/admin/Admin", props: { blogs: }
+  end
 end
