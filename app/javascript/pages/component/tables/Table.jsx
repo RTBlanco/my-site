@@ -23,7 +23,7 @@ const Table = ({children, name}) => {
                   </div>
                 </td>
                 <td><span className="tag webdev">{child.category}</span></td>
-                <td>{child.year}</td>
+                <td>{child.dateLabel.split(', ')[1]}</td>
               </tr>
             ))}
           </tbody>
