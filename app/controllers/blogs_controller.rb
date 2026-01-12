@@ -4,20 +4,12 @@ class BlogsController < ApplicationController
     blog = Blog.first
 
 
-    render inertia: "containers/blogs/Blog", props: { blogData: blog }
+    render inertia: "containers/blogs/Blog", props: { blogData: blog.serialized }
   end
 
   def index
     blogs = Blog.all.map do |blog|
-      {
-        id: blog.id,
-        title: blog.title,
-        category: blog.category,
-        dateISO: blog.created_at.strftime("%F"),
-        dateLabel: blog.created_at.strftime("%b %d, %Y"),
-        content: blog.content,
-        image: blog.image
-      }
+      blog.serialized
     end
 
     # render all the blogs
