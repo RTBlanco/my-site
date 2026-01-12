@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   def show
+    # render single blog
     render inertia: "containers/blogs/Blog"
   end
 
