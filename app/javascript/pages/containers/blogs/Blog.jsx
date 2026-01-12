@@ -1,6 +1,9 @@
 import blog1 from "../../../images/blog-1.jpg"
+import { usePage } from "@inertiajs/react"
 
 const Blog = () => {
+
+  const { blogData } = usePage().props
   
   const blog = {
     id: 1,
@@ -15,7 +18,7 @@ const Blog = () => {
   }
 
   
-
+  console.log("Props -> ",blogData)
   return (
     
     <article className="blog active" data-page="blog">
