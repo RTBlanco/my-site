@@ -27,8 +27,9 @@ Rails.application.routes.draw do
   # inertia "Blogs" => "containers/blogs/Blogs"
   # inertia "Blog" => "containers/blogs/Blog"
   inertia "Contact" => "containers/Contact"
-  namespace :admin do
-    inertia "dashboard" => "containers/admin/Admin"
+  scope :admin do
+    # inertia "dashboard" => "containers/admin/Admin"
+    get "/dashboard" => "application#dashboard"
     inertia "login" => "containers/admin/AdminLogin"
   end
 
