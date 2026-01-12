@@ -6,8 +6,11 @@ import blog5 from "../../../images/blog-5.jpg"
 import blog6 from "../../../images/blog-6.jpg"
 
 import { Link } from "@inertiajs/react"
+import { usePage } from "@inertiajs/react"
 
 const Blogs = () => {
+
+  const { blogs } = usePage().props
   const blogPosts = [
     {
       id: 1,
@@ -15,7 +18,7 @@ const Blogs = () => {
       category: "Design",
       dateISO: "2022-02-23",
       dateLabel: "Feb 23, 2022",
-      excerpt: "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
+      content: "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
       image: blog1,
       alt: "Design conferences in 2022",
       link: "/Blogs/1",
@@ -26,7 +29,7 @@ const Blogs = () => {
       category: "Design",
       dateISO: "2022-02-23",
       dateLabel: "Feb 23, 2022",
-      excerpt: "Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.",
+      content: "Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.",
       image: blog2,
       alt: "Best fonts every designer",
       link: "#",
@@ -37,7 +40,7 @@ const Blogs = () => {
       category: "Design",
       dateISO: "2022-02-23",
       dateLabel: "Feb 23, 2022",
-      excerpt:
+      content:
         "Excepteur sint occaecat cupidatat non proident, quis nostrum exercitationem ullam corporis suscipit.",
       image: blog3,
       alt: "Design digest #80",
@@ -49,7 +52,7 @@ const Blogs = () => {
       category: "Design",
       dateISO: "2022-02-23",
       dateLabel: "Feb 23, 2022",
-      excerpt:
+      content:
         "Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.",
       image: blog4,
       alt: "UI interactions of the week",
@@ -61,7 +64,7 @@ const Blogs = () => {
       category: "Design",
       dateISO: "2022-02-23",
       dateLabel: "Feb 23, 2022",
-      excerpt:
+      content:
         "Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       image: blog5,
       alt: "The forgotten art of spacing",
@@ -73,7 +76,7 @@ const Blogs = () => {
       category: "Design",
       dateISO: "2022-02-23",
       dateLabel: "Feb 23, 2022",
-      excerpt:
+      content:
         "Optio cumque nihil impedit quo minus quod maxime placeat, velit esse cillum.",
       image: blog6,
       alt: "Design digest #79",
@@ -83,7 +86,7 @@ const Blogs = () => {
 
   const renderBlogs = () => {
 
-    return blogPosts.map(blog => (
+    return blogs.map(blog => (
       <li key={blog.id} className="blog-post-item">
         <Link href={blog.link}>
 
@@ -104,7 +107,7 @@ const Blogs = () => {
             <h3 className="h3 blog-item-title">{blog.title}</h3>
 
             <p className="blog-text">
-              {blog.excerpt}
+              {blog.content}
             </p>
 
           </div>
@@ -114,7 +117,7 @@ const Blogs = () => {
     ))
   }
 
-
+  console.log(blogs)
   return (
     <article className="blog active" data-page="blog">
 
