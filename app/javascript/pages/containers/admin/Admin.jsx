@@ -1,6 +1,9 @@
 import Table from "../../component/tables/Table"
+import { usePage } from "@inertiajs/react";
 
 export default function Admin() {
+
+  const { blogs } = usePage().props
 
   const projects = [
     {
@@ -8,7 +11,7 @@ export default function Admin() {
       title: "Finance Dashboard",
       description: "Analytics platform",
       category: "Web development",
-      year: 2024,
+      dateLabel: "Jan 12, 2026"
     },
   ];
 
@@ -25,7 +28,7 @@ export default function Admin() {
           {projects}
         </Table>
         <Table name={"Blogs"}>
-          {projects}
+          {blogs}
         </Table>
       </section>
 
