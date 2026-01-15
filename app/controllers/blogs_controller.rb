@@ -1,6 +1,5 @@
 class BlogsController < ApplicationController
   def show
-    # render single blog
     blog = Blog.first
 
 
