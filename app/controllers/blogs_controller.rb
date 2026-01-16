@@ -11,7 +11,6 @@ class BlogsController < ApplicationController
       blog.serialized.merge({ "image" => url_for(blog.image) })
     end
 
-    # render all the blogs
     render inertia: "containers/blogs/Blogs", props: { blogs: }
   end
 end
