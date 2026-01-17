@@ -7,9 +7,7 @@ class BlogsController < ApplicationController
   end
 
   def index
-    # blogs = Blog.all.map do |blog|
-    #   blog.serialized.merge({ "image" => url_for(blog.image) })
-    # end
+    # issue here in the future
     blogs = Blog.all.map do |blog|
       BlogSerializer.new(blog).as_json
     end
