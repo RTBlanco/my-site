@@ -3,12 +3,11 @@ class Blog < ApplicationRecord
 
   after_commit :add_default_image, on: [:create, :update]
 
-  def serialized
-    serializable_hash(except: [ :created_at, :updated_at, :image ]).merge(
-      "dateISO" => created_at.to_date.iso8601,
-      "dateLabel" => created_at.strftime("%b %d, %Y")
-    )
+  def image_url
+    return nil unless image.attached?
+    Rails.application.routes.url_helpers.rails_blob_path(image, only_path: true)
   end
+
 
   private
 
