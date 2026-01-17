@@ -88,7 +88,7 @@ const Blogs = () => {
 
     return blogs.map(blog => (
       <li key={blog.id} className="blog-post-item">
-        <Link href={blog.link}>
+        <Link href={`/Blogs/${blog.id}`}>
 
           <figure className="blog-banner-box">
             <img src={blog.image} alt={blog.alt} loading="lazy" />
