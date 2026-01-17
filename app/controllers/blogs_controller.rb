@@ -1,9 +1,9 @@
 class BlogsController < ApplicationController
   def show
-    blog = Blog.first
+    blog = BlogSerializer.new(Blog.first).as_json
 
 
-    render inertia: "containers/blogs/Blog", props: { blogData: blog.serialized }
+    render inertia: "containers/blogs/Blog", props: { blogData: blog}
   end
 
   def index
