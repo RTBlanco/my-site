@@ -7,10 +7,12 @@ class BlogsController < ApplicationController
   end
 
   def index
+    # blogs = Blog.all.map do |blog|
+    #   blog.serialized.merge({ "image" => url_for(blog.image) })
+    # end
     blogs = Blog.all.map do |blog|
-      blog.serialized.merge({ "image" => url_for(blog.image) })
+      BlogSerializer.new(blog).as_json
     end
-
     render inertia: "containers/blogs/Blogs", props: { blogs: }
   end
 end
