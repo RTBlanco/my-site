@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
   def dashboard
     blogs = Blog.all.map do |blog|
-      blog.serialized
+      BlogSerializer.new(blog).as_json
     end
 
     render inertia: "containers/admin/Admin", props: { blogs: }
