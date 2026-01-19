@@ -1,5 +1,5 @@
 import Table from "../../component/tables/Table"
-import EditBlogModal from "../../component/modals/EditBlogModal";
+import Modal from "../../component/modals/Modal";
 import { usePage } from "@inertiajs/react";
 import { useRef } from "react";
 
@@ -41,7 +41,9 @@ export default function Admin() {
         </Table>
       </section>
 
-      <EditBlogModal modalRef={modalRef} toggleModal={toggleModal}/>
+      <Modal modalRef={modalRef} toggleModal={toggleModal}>
+        taco
+      </Modal>
     </article>
   )
 }
