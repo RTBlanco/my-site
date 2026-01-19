@@ -1,27 +1,19 @@
 import { useRef } from "react";
 
-const EditBlogModal = () => {
-
-
-  const modalRef = useRef(null)
-
-  const toggelModal = () => {
-    modalRef.current.classList.toggle("active")
-    modalRef.current.firstChild.classList.toggle("active")
-  }
+const EditBlogModal = ({modalRef, toggleModal}) => {
 
   // const populateModal = (id) => {
   //   const testimonial = testimonialsItems.find(testimonial => id === testimonial.id)
 
   //   setModalState(testimonial)
-  //   toggelModal()
+  //   toggleModal()
   // }
 
   return(
     <div ref={modalRef} className="modal-container" data-modal-container>
-      <div className="overlay" onClick={toggelModal} data-overlay></div>
+      <div className="overlay" onClick={toggleModal} data-overlay></div>
       <section className="testimonials-modal">
-        <button onClick={toggelModal} className="modal-close-btn" data-modal-close-btn>
+        <button onClick={toggleModal} className="modal-close-btn" data-modal-close-btn>
           <ion-icon name="close-outline"></ion-icon>
         </button>
 
