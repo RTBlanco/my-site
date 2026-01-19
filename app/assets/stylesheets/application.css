@@ -1900,6 +1900,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   margin-bottom: 50px;
 }
 
+.table-name {
+  display: flex;
+  align-items: center;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
