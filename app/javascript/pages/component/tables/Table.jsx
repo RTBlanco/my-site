@@ -1,11 +1,17 @@
-const Table = ({children, name}) => {
+const Table = ({children, name, toggleModal}) => {
 
   return (
     <div className="table-wrapper">
       <table>
         <thead>
           <tr>
-            <th>{name}</th>
+            <th className="table-name">
+              {name}
+
+              <button style={{"margin-left": "10px"}} onClick={toggleModal}>
+                <ion-icon name="add-circle-outline"></ion-icon>
+              </button>
+            </th>
             <th>Category</th>
             <th>Year</th>
           </tr>
