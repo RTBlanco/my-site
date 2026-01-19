@@ -1,13 +1,13 @@
-import IconQuote from "../../images/icon-quote.svg"
+import IconQuote from "../../../images/icon-quote.svg"
 
 
-const TestimonialModal = ({modalRef, toggelModal, testimonial}) => {
+const TestimonialModal = ({modalRef, toggleModal, testimonial}) => {
 
   return(
     <div ref={modalRef} className="modal-container" data-modal-container>
-      <div className="overlay" onClick={toggelModal} data-overlay></div>
+      <div className="overlay" onClick={toggleModal} data-overlay></div>
       <section className="testimonials-modal">
-        <button onClick={toggelModal} className="modal-close-btn" data-modal-close-btn>
+        <button onClick={toggleModal} className="modal-close-btn" data-modal-close-btn>
           <ion-icon name="close-outline"></ion-icon>
         </button>
 
