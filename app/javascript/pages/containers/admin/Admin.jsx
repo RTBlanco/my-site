@@ -2,6 +2,7 @@ import Table from "../../component/tables/Table"
 import Modal from "../../component/modals/Modal";
 import { usePage } from "@inertiajs/react";
 import { useRef } from "react";
+import BlogForm from "../../component/BlogForm";
 
 export default function Admin() {
 
@@ -42,7 +43,7 @@ export default function Admin() {
       </section>
 
       <Modal modalRef={modalRef} toggleModal={toggleModal}>
-        taco
+        <BlogForm />
       </Modal>
     </article>
   )
