@@ -1,5 +1,7 @@
 import Table from "../../component/tables/Table"
+import EditBlogModal from "../../component/modals/EditBlogModal";
 import { usePage } from "@inertiajs/react";
+import { useRef } from "react";
 
 export default function Admin() {
 
@@ -15,6 +17,13 @@ export default function Admin() {
     },
   ];
 
+  const modalRef = useRef(null)
+
+  const toggleModal = () => {
+    modalRef.current.classList.toggle("active")
+    modalRef.current.firstChild.classList.toggle("active")
+  }
+
   return (
     <article className="admin active" data-page="admin">
 
@@ -24,14 +33,15 @@ export default function Admin() {
 
       <section className="dashboard">
 
-        <Table name={"projects"}>
+        <Table name={"projects"} toggleModal={toggleModal}>
           {projects}
         </Table>
-        <Table name={"Blogs"}>
+        <Table name={"Blogs"} toggleModal={toggleModal}>
           {blogs}
         </Table>
       </section>
 
+      <EditBlogModal modalRef={modalRef} toggleModal={toggleModal}/>
     </article>
   )
 }
