@@ -49,7 +49,7 @@ const Testimonials = () => {
     }
   ];
 
-  const toggelModal = () => {
+  const toggleModal = () => {
     modalRef.current.classList.toggle("active")
     modalRef.current.firstChild.classList.toggle("active")
   }
@@ -58,7 +58,7 @@ const Testimonials = () => {
     const testimonial = testimonialsItems.find(testimonial => id === testimonial.id)
 
     setModalState(testimonial)
-    toggelModal()
+    toggleModal()
   }
 
 
@@ -98,7 +98,7 @@ const Testimonials = () => {
       </section>
 
 
-      <TestimonialModal modalRef={modalRef} toggelModal={toggelModal} testimonial={modalState}/>
+      <TestimonialModal modalRef={modalRef} toggleModal={toggleModal} testimonial={modalState}/>
     </>
   )
 }
