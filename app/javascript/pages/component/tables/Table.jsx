@@ -18,7 +18,7 @@ const Table = ({children, name, toggleModal, populateModal}) => {
         </thead>
         <tbody>
           {children.map(child => (
-            <tr key={child.id}>
+            <tr key={child.id} onClick={() => populateModal(child)}>
               <td>
                 <div className="project-cell">
                   <div className="project-image" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}></div>
