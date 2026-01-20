@@ -2,10 +2,8 @@ class BlogsController < ApplicationController
 
   def create
     blog = Blog.new(blog_params)
-
-    if blog.save
-      puts "saved"
-    end
+    blog.create
+    redirect_to dashboard_path
   end
   def show
     blog = Blog.find(params[:id])
