@@ -59,7 +59,7 @@ export default function Admin() {
       </section>
 
       <Modal modalRef={modalRef} toggleModal={toggleModal} populateModal={populateModal}>
-        <BlogForm blog={editBlog}/>
+        <BlogForm blog={editBlog} toggleModal={toggleModal}/>
       </Modal>
     </article>
   )
