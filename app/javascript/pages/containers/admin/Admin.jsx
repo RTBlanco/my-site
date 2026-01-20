@@ -1,13 +1,13 @@
 import Table from "../../component/tables/Table"
 import Modal from "../../component/modals/Modal";
 import { usePage } from "@inertiajs/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import BlogForm from "../../component/BlogForm";
 
 export default function Admin() {
 
   const { blogs } = usePage().props
-  const {editBlog, setEditBlog} = {}
+  const [editBlog, setEditBlog] = useState({})
 
   const projects = [
     {
@@ -28,10 +28,14 @@ export default function Admin() {
 
   const populateModal = (blog) => {
     if (blog) {
+      console.log('testing ')
       setEditBlog(blog)
     } else {
+      console.log('testing 2')
       setEditBlog({})
     }
+
+    toggleModal()
   }
 
   return (
@@ -51,7 +55,7 @@ export default function Admin() {
         </Table>
       </section>
 
-      <Modal modalRef={modalRef} toggleModal={toggleModal} populateModal={}>
+      <Modal modalRef={modalRef} toggleModal={toggleModal} populateModal={populateModal}>
         <BlogForm blog={editBlog}/>
       </Modal>
     </article>
