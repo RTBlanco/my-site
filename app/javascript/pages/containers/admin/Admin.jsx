@@ -21,7 +21,10 @@ export default function Admin() {
 
   const modalRef = useRef(null)
 
-  const toggleModal = () => {
+  const toggleModal = (newBlog = true) => {
+    if (newBlog) {
+      setEditBlog({})
+    }
     modalRef.current.classList.toggle("active")
     modalRef.current.firstChild.classList.toggle("active")
   }
@@ -35,7 +38,7 @@ export default function Admin() {
       setEditBlog({})
     }
 
-    toggleModal()
+    toggleModal(false)
   }
 
   return (
