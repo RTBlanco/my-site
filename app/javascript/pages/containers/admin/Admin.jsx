@@ -7,6 +7,7 @@ import BlogForm from "../../component/BlogForm";
 export default function Admin() {
 
   const { blogs } = usePage().props
+  const {editBlog, setEditBlog} = {}
 
   const projects = [
     {
@@ -25,6 +26,14 @@ export default function Admin() {
     modalRef.current.firstChild.classList.toggle("active")
   }
 
+  const populateModal = (blog) => {
+    if (blog) {
+      setEditBlog(blog)
+    } else {
+      setEditBlog({})
+    }
+  }
+
   return (
     <article className="admin active" data-page="admin">
 
@@ -37,13 +46,13 @@ export default function Admin() {
         <Table name={"projects"} toggleModal={toggleModal}>
           {projects}
         </Table>
-        <Table name={"Blogs"} toggleModal={toggleModal}>
+        <Table name={"Blogs"} toggleModal={toggleModal} populateModal={populateModal}>
           {blogs}
         </Table>
       </section>
 
-      <Modal modalRef={modalRef} toggleModal={toggleModal}>
-        <BlogForm />
+      <Modal modalRef={modalRef} toggleModal={toggleModal} populateModal={}>
+        <BlogForm blog={editBlog}/>
       </Modal>
     </article>
   )
