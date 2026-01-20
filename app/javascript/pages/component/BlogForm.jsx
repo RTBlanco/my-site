@@ -1,10 +1,10 @@
 import { Form } from "@inertiajs/react";
 
 const BlogForm = ({blog}) => {
-  const newBlog = () => (
-    Object.keys(blog).length === 0
-  )
 
+  const newBlog = () => {
+    return Object.keys(blog).length === 0
+  }
   return (
     <section className="blog-form">
 
@@ -17,11 +17,11 @@ const BlogForm = ({blog}) => {
         </div>
 
         <div className="input-wrapper">
-          <input type="text" name="title" className="form-input" placeholder="Blog Title" required data-form-input />
-          <input type="text" name="category" className="form-input" placeholder="Blog Category" data-form-input />
+          <input defaultValue={blog.title} type="text" name="title" className="form-input" placeholder="Blog Title" required data-form-input />
+          <input defaultValue={blog.category} type="text" name="category" className="form-input" placeholder="Blog Category" data-form-input />
         </div>
 
-        <textarea name="content" className="form-input" placeholder="Content" required data-form-input></textarea>
+        <textarea defaultValue={blog.content} name="content" className="form-input" placeholder="Content" required data-form-input></textarea>
 
         <button className="form-btn" type="submit" data-form-btn>
           <ion-icon name="enter-outline"></ion-icon>
