@@ -1,26 +1,34 @@
-const BlogForm = () => {
-  let blog;
+import { Form } from "@inertiajs/react";
+
+const BlogForm = ({blog}) => {
+  const newBlog = () => (
+    Object.keys(blog).length === 0
+  )
+
   return (
     <section className="blog-form">
 
       <h3 className="h3 form-title">{newBlog ? "Create Blog" : `Edit ${blog.name}`}</h3>
 
-      <form action="#" className="form" data-form>
+      <Form action="/Blogs" method="post" className="Form" data-form>
 
         <div className="input-wrapper">
-          <input type="text" name="fullname" className="form-input" placeholder="Full name" required data-form-input />
-
-          <input type="email" name="email" className="form-input" placeholder="Email address" required data-form-input />
+          <input type="file" name="image" className="form-input" placeholder="image" accept="image/*" data-form-input />
         </div>
 
-        <textarea name="message" className="form-input" placeholder="Your Message" required data-form-input></textarea>
+        <div className="input-wrapper">
+          <input type="text" name="title" className="form-input" placeholder="Blog Title" required data-form-input />
+          <input type="text" name="category" className="form-input" placeholder="Blog Category" data-form-input />
+        </div>
 
-        <button className="form-btn" type="submit" disabled data-form-btn>
-          <ion-icon name="paper-plane"></ion-icon>
+        <textarea name="content" className="form-input" placeholder="Content" required data-form-input></textarea>
+
+        <button className="form-btn" type="submit" data-form-btn>
+          <ion-icon name="enter-outline"></ion-icon>
           <span>Save</span>
         </button>
 
-      </form>
+      </Form>
 
     </section>
   )
