@@ -1,4 +1,4 @@
-const Table = ({children, name, toggleModal}) => {
+const Table = ({children, name, toggleModal, populateModal}) => {
 
   return (
     <div className="table-wrapper">
@@ -8,7 +8,7 @@ const Table = ({children, name, toggleModal}) => {
             <th className="table-name">
               {name}
 
-              <button style={{"margin-left": "10px"}} onClick={toggleModal}>
+              <button style={{"marginLeft": "10px"}} onClick={toggleModal}>
                 <ion-icon name="add-circle-outline"></ion-icon>
               </button>
             </th>
@@ -21,7 +21,7 @@ const Table = ({children, name, toggleModal}) => {
             <tr key={child.id}>
               <td>
                 <div className="project-cell">
-                  <div className="project-image" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%);" }}></div>
+                  <div className="project-image" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}></div>
                   <div className="project-info">
                     <h3>{child.title}</h3>
                   </div>
