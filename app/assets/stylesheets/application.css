@@ -1647,7 +1647,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .form-btn {
     width: max-content;
-    margin-left: auto;
+    /* margin-left: auto; */
   }
   
 }
@@ -2024,6 +2024,11 @@ td {
   height: 8px;
   border-radius: 50%;
   background: #ffc107;
+}
+
+.form-btns {
+  display: flex;
+  justify-content: space-around;
 }
 
 @media (max-width: 768px) {
