@@ -48,7 +48,7 @@ const BlogForm = ({blog, toggleModal}) => {
             </button>
           }
 
-          <button onClick={toggleModal} className="form-btn" type="submit" data-form-btn>
+          <button onClick={() => toggleModal(newBlog)} className="form-btn" type="submit" data-form-btn>
             <ion-icon name="enter-outline"></ion-icon>
             <span>Save</span>
           </button>
