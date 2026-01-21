@@ -7,7 +7,6 @@ class BlogsController < ApplicationController
   end
 
   def update
-    binding.break
     blog = Blog.find(params[:id])
     blog.update(blog_params)
 
