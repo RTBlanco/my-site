@@ -7,10 +7,16 @@ class BlogsController < ApplicationController
   end
 
   def update
+    binding.break
     blog = Blog.find(params[:id])
-
     blog.update(blog_params)
 
+    redirect_to dashboard_path
+  end
+
+  def destroy
+    blog = Blog.find(params[:id])
+    blog.delete
     redirect_to dashboard_path
   end
 
