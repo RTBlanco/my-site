@@ -1,6 +1,8 @@
 class Blog < ApplicationRecord
   has_one_attached :image
 
+  validates_presence_of :content, :title, :category
+
   after_commit :add_default_image, on: [:create, :update]
 
   def image_url
