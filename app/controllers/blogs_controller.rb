@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
 
+  before_action :set_blog, only: [:update, :destroy, :show]
   def create
     blog = Blog.new(blog_params)
     if blog.valid?
@@ -11,7 +12,6 @@ class BlogsController < ApplicationController
   end
 
   def update
-    blog = Blog.find(params[:id])
     blog.assign_attributes(blog_params)
 
     if blog.valid?
@@ -22,7 +22,6 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    blog = Blog.find(params[:id])
     blog.delete
     redirect_to dashboard_path
   end
@@ -30,7 +29,7 @@ class BlogsController < ApplicationController
   def show
     blog = Blog.find(params[:id])
 
-    render inertia: "containers/blogs/Blog", props: { blogData: BlogSerializer.new(blog).as_json }
+    render inertia: "containers/blogs/Blog", props: { blog: BlogSerializer.new(blog).as_json }
   end
 
   def index
@@ -45,5 +44,9 @@ class BlogsController < ApplicationController
 
   def blog_params
     params.require(:blog).permit(:title, :content, :category, :image)
+  end
+
+  def set_blog
+    @blog = Blog.find(params[:id])
   end
 end
