@@ -2,13 +2,19 @@ class BlogsController < ApplicationController
 
   def create
     blog = Blog.new(blog_params)
-    blog.save
+    if blog.valid?
+      blog.save
+    end
     redirect_to dashboard_path
   end
 
   def update
     blog = Blog.find(params[:id])
-    blog.update(blog_params)
+    blog.assign_attributes(blog_params)
+
+    if blog.valid?
+      blog.save
+    end
 
     redirect_to dashboard_path
   end
