@@ -3,22 +3,8 @@ import { usePage } from "@inertiajs/react"
 
 const Blog = () => {
 
-  const { blogData } = usePage().props
+  const { blog} = usePage().props
   
-  const blog = {
-    id: 1,
-    title: "Design conferences in 2022",
-    category: "Design",
-    dateISO: "2022-02-23",
-    dateLabel: "Feb 23, 2022",
-    excerpt: "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
-    image: blog1,
-    alt: "Design conferences in 2022",
-    link: "#",
-  }
-
-  
-  console.log("Props -> ",blogData)
   return (
     
     <article className="blog active" data-page="blog">
