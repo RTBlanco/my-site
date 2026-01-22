@@ -30,7 +30,7 @@ const BlogForm = ({blog, toggleModal}) => {
         >
 
         <div className="input-wrapper">
-          <input type="file" name="image" className="form-input" placeholder="image" accept="image/*" data-form-input />
+          <input type="file" name="[blog]image" className="form-input" placeholder="image" accept="image/*" data-form-input />
         </div>
 
         <div className="input-wrapper">
