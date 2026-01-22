@@ -4,8 +4,10 @@ class BlogsController < ApplicationController
     blog = Blog.new(blog_params)
     if blog.valid?
       blog.save
+      redirect_to dashboard_path
+    else
+      redirect_to dashboard_path, inertia: { errors: blog.errors }
     end
-    redirect_to dashboard_path
   end
 
   def update
