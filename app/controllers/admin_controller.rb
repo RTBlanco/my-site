@@ -10,7 +10,7 @@ class AdminController < ApplicationController
   end
 
   def sign_admin_in
-    # binding.break
+
     @admin = Admin.find_by(email: params[:email])
 
     if @admin && @admin.valid_password?(params[:password])
@@ -21,8 +21,15 @@ class AdminController < ApplicationController
     end
   end
 
+  def logout
+    sign_out current_admin
+
+    redirect_to root_path
+  end
 
   def login
+    return redirect_to dashboard_path unless !current_admin
+
     render inertia: "containers/admin/AdminLogin"
   end
 end
