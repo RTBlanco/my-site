@@ -46,7 +46,7 @@ export default function Admin() {
 
       <header className="dashboard-header">
         <h2 className="h2 article-title">Dashboard</h2>
-         <Link href="/logout" method="post" className="form-btn" as="button" data-form-btn>
+         <Link href="/admin/logout" method="post" className="form-btn" as="button" data-form-btn>
             <ion-icon name="log-out-outline"></ion-icon>
             <span>Logout</span>
           </Link>
