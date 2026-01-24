@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :blogs, path: :Blogs
   # devise_for :admins
-  devise_for :admins, only: :sessions
+
 
   # Redirect to localhost from 127.0.0.1 to use same IP address with Vite server
   constraints(host: "127.0.0.1") do
@@ -32,8 +32,9 @@ Rails.application.routes.draw do
   scope :admin do
     # inertia "dashboard" => "containers/admin/Admin"
     get "/dashboard" => "admin#dashboard"
-    inertia "login" => "containers/admin/AdminLogin"
-    # post "login" => "admin#login"
+    get "login" => "admin#login"
+    post "login" => "admin#sign_admin_in"
+    post "logout" => "admin#logout"
   end
 
   root "application#index"
