@@ -12,24 +12,23 @@ class BlogsController < ApplicationController
   end
 
   def update
-    blog.assign_attributes(blog_params)
+    @blog.assign_attributes(blog_params)
 
-    if blog.valid?
-      blog.save
+    if @blog.valid?
+      @blog.save
+      redirect_to dashboard_path
+    else
+      redirect_to dashboard_path, inertia: { errors: @blog.errors }
     end
-
-    redirect_to dashboard_path
   end
 
   def destroy
-    blog.delete
+    @blog.delete
     redirect_to dashboard_path
   end
 
   def show
-    blog = Blog.find(params[:id])
-
-    render inertia: "containers/blogs/Blog", props: { blog: BlogSerializer.new(blog).as_json }
+    render inertia: "containers/blogs/Blog", props: { blog: BlogSerializer.new(@blog).as_json }
   end
 
   def index
