@@ -1233,8 +1233,14 @@ textarea.form-input::-webkit-resizer { display: none; }
 .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
 
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+}
 
-
+.dashboard-header button {
+  height: 75%;
+}
 
 /*-----------------------------------*\
   #RESPONSIVE
@@ -1649,6 +1655,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     /* margin-left: auto; */
   }
+
   
 }
 
