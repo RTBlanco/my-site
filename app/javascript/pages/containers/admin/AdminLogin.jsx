@@ -1,3 +1,5 @@
+import { Form } from "@inertiajs/react";
+
 const AdminLogin = () => {
   return(
     <article className="admin-login active" data-page="admin-login">
@@ -8,7 +10,7 @@ const AdminLogin = () => {
 
       <section className="contact-form">
 
-        <form action="#" className="form" data-form>
+        <Form action="/admins/sign_in" method="POST" className="form" data-form>
 
           <div className="input-wrapper">
             <input type="email" name="email" className="form-input" placeholder="Email" required data-form-input />
@@ -16,12 +18,12 @@ const AdminLogin = () => {
             <input type="password" name="password" className="form-input" placeholder="Password" required data-form-input />
           </div>
 
-          <button className="form-btn" type="submit" disabled data-form-btn>
+          <button className="form-btn" type="submit" data-form-btn>
             <ion-icon name="enter-outline"></ion-icon>
             <span>Login</span>
           </button>
 
-        </form>
+        </Form>
 
       </section>
 

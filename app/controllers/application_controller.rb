@@ -18,11 +18,12 @@ class ApplicationController < ActionController::Base
     render inertia: "containers/Porfolio"
   end
 
-  def dashboard
-    blogs = Blog.all.map do |blog|
-      BlogSerializer.new(blog).as_json
-    end
 
-    render inertia: "containers/admin/Admin", props: { blogs: }
+  def authenticate_admin
+    unless admin_signed_in?
+      redirect_to :root
+    end
   end
+
+
 end
