@@ -1,16 +1,22 @@
-import { Form } from "@inertiajs/react";
+import { Form, usePage } from "@inertiajs/react";
+
 
 const AdminLogin = () => {
+  const { errors } = usePage().props
+
   return(
     <article className="admin-login active" data-page="admin-login">
-
+      {/* change this  */}
+      {Object.keys(errors).length === 0 || 
+        <p style={{color: 'white'}}>{errors}</p>
+      }
       <header>
         <h2 className="h2 article-title">Login</h2>
       </header>
 
       <section className="contact-form">
 
-        <Form action="/admins/sign_in" method="POST" className="form" data-form>
+        <Form action="/admin/login" method="POST" className="form" data-form>
 
           <div className="input-wrapper">
             <input type="email" name="email" className="form-input" placeholder="Email" required data-form-input />
