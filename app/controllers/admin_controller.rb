@@ -10,7 +10,6 @@ class AdminController < ApplicationController
   end
 
   def sign_admin_in
-
     @admin = Admin.find_by(email: params[:email])
 
     if @admin && @admin.valid_password?(params[:password])

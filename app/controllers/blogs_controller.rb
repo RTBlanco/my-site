@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
-  before_action :authenticate_admin, only: [:create, :update, :destroy]
-  before_action :set_blog, only: [:update, :destroy, :show]
+  before_action :authenticate_admin, only: [ :create, :update, :destroy ]
+  before_action :set_blog, only: [ :update, :destroy, :show ]
 
   def create
     blog = Blog.new(blog_params)
