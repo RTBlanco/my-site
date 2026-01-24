@@ -1,6 +1,6 @@
 import Table from "../../component/tables/Table"
 import Modal from "../../component/modals/Modal";
-import { usePage } from "@inertiajs/react";
+import { usePage, Link } from "@inertiajs/react";
 import { useRef, useState } from "react";
 import BlogForm from "../../component/BlogForm";
 
@@ -44,8 +44,12 @@ export default function Admin() {
   return (
     <article className="admin active" data-page="admin">
 
-      <header>
+      <header className="dashboard-header">
         <h2 className="h2 article-title">Dashboard</h2>
+         <Link href="/logout" method="post" className="form-btn" as="button" data-form-btn>
+            <ion-icon name="log-out-outline"></ion-icon>
+            <span>Logout</span>
+          </Link>
       </header>
 
       <section className="dashboard">
