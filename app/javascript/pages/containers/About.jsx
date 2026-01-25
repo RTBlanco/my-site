@@ -10,17 +10,11 @@ const About = ({active}) => {
       </header>
       <section className="about-text">
         <p>
-          I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-          I enjoy
-          turning complex problems into simple, beautiful and intuitive designs.
-        </p>
-
-        <p>
-          My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-          Moreover, I
-          add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-          across your
-          message and identity in the most creative way. I created web design for many famous brand companies.
+          I’m a Full-stack Software Engineer with over four years of experience creating reliable, scalable web applications 
+          using Ruby on Rails, React.js, and Python. I enjoy building tools and features that make life easier for users, 
+          whether it’s designing an API that saves time, crafting a smooth, intuitive interface, or improving performance 
+          behind the scenes. I’ve worked across the entire development lifecycle in Agile teams, and I’m proud of writing 
+          clean, maintainable code and continuously learning new technologies to deliver better solutions.
         </p>
       </section>
 
