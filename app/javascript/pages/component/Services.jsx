@@ -6,7 +6,7 @@ import IconPhoto from "../../images/icon-photo.svg"
 const Services = () => {
   const serviceItems = [
     {
-      title: "Web Design",
+      title: "CAD Design",
       image: IconDesign,
       text: "The most modern and high-quality design made at a professional level."
     },
