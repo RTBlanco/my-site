@@ -2,7 +2,7 @@ import Services from "../component/Services"
 import Testimonials from "../component/Testimonials"
 import Clients from "../component/Clients"
 
-const About = ({active}) => {
+const About = () => {
   return (
     <article className="about active" data-page="about">
       <header>
