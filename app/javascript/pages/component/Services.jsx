@@ -8,7 +8,7 @@ const Services = () => {
     {
       title: "CAD Design",
       image: IconDesign,
-      text: "The most modern and high-quality design made at a professional level."
+      text: "The most modern and high-quality design"
     },
     {
       title: "Web Development",
