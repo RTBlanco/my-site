@@ -1,5 +1,5 @@
 # README
-<image src="https://github.com/RTBlanco/my-site/blob/main/Sad_Cry.gif">
+<image src="https://github.com/RTBlanco/my-site/blob/main/repo-image.gif">
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
