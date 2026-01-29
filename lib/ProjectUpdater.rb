@@ -1,7 +1,7 @@
 require "octokit"
 
 
-client = Octokit::Client.new(:access_token => "d")
+client = Octokit::Client.new(:access_token => "")
 
 # puts client.repos({}, query: {type: "owner", sort: "asc"})
 # puts client.repos(user: "RTBlanco")
@@ -17,4 +17,4 @@ puts user.id
 
 repo = client.repo(owner: "RTBlanco", repo: "my-site")
 
-puts repo.description
+puts client.readme(repo:"my-site", owner: "RTBlanco", :accept => 'application/vnd.github.html').content
