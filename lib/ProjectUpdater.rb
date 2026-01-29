@@ -1,4 +1,5 @@
 require "octokit"
+require "base64"
 
 
 client = Octokit::Client.new(:access_token => "")
@@ -17,4 +18,14 @@ puts user.id
 
 repo = client.repo(owner: "RTBlanco", repo: "my-site")
 
-puts client.readme(repo:"my-site", owner: "RTBlanco", :accept => 'application/vnd.github.html').content
+file = client.contents(repo.full_name, path: "repo-image.gif")
+
+puts file.html_url
+puts repo.description
+# file.each do |f|
+#   puts f.path
+# end
+# image_bytes = Base64.decode64(file.content)
+
+# # Save locally
+# File.binwrite("logo.gif", image_bytes)
