@@ -1,16 +1,17 @@
 import { Form, useForm } from "@inertiajs/react";
 
-const BlogForm = ({modalRef, blog, toggleModal}) => {
+const ProjectForm = ({blog, toggleModal}) => {
 
   const {delete: destroy } = useForm({})
-  const newBlog =  Object.keys(blog).length === 0
+  // const newBlog =  Object.keys(blog).length === 0
+  const newBlog = true
 
   const handleDelete = (e, id) => {
     e.preventDefault()
     destroy(`/Blogs/${id}`,{
       preserveScroll: true
     })
-    toggleModal(modalRef)
+    toggleModal()
   }
   console.log(newBlog)
   return (
@@ -33,11 +34,11 @@ const BlogForm = ({modalRef, blog, toggleModal}) => {
         </div>
 
         <div className="input-wrapper">
-          <input defaultValue={blog.title} type="text" name="title" className="form-input" placeholder="Blog Title"  data-form-input />
-          <input defaultValue={blog.category} type="text" name="category" className="form-input" placeholder="Blog Category" data-form-input />
+          {/* <input defaultValue={blog.title} type="text" name="title" className="form-input" placeholder="Blog Title"  data-form-input />
+          <input defaultValue={blog.category} type="text" name="category" className="form-input" placeholder="Blog Category" data-form-input /> */}
         </div>
 
-        <textarea defaultValue={blog.content} name="content" className="form-input" placeholder="Content"  data-form-input></textarea>
+        {/* <textarea defaultValue={blog.content} name="content" className="form-input" placeholder="Content"  data-form-input></textarea> */}
 
         <div className="form-btns">
           {newBlog ||
@@ -47,7 +48,7 @@ const BlogForm = ({modalRef, blog, toggleModal}) => {
             </button>
           }
 
-          <button onClick={(e) => toggleModal(modalRef, newBlog)} className="form-btn" type="submit" data-form-btn>
+          <button onClick={() => toggleModal(newBlog)} className="form-btn" type="submit" data-form-btn>
             <ion-icon name="enter-outline"></ion-icon>
             <span>Save</span>
           </button>
@@ -59,4 +60,4 @@ const BlogForm = ({modalRef, blog, toggleModal}) => {
   )
 }
 
-export default BlogForm;
+export default ProjectForm;

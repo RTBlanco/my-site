@@ -1,4 +1,4 @@
-const Table = ({children, name, toggleModal, populateModal}) => {
+const Table = ({ modalRef, children, name, toggleModal, populateModal}) => {
 
   return (
     <div className="table-wrapper">
@@ -8,7 +8,7 @@ const Table = ({children, name, toggleModal, populateModal}) => {
             <th className="table-name">
               {name}
 
-              <button style={{"marginLeft": "10px"}} onClick={toggleModal}>
+              <button style={{"marginLeft": "10px"}} onClick={(e) => toggleModal(modalRef)}>
                 <ion-icon name="add-circle-outline"></ion-icon>
               </button>
             </th>

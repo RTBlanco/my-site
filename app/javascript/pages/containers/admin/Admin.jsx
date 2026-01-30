@@ -3,26 +3,29 @@ import Modal from "../../component/modals/Modal";
 import { usePage, Link } from "@inertiajs/react";
 import { useRef, useState } from "react";
 import BlogForm from "../../component/BlogForm";
+import ProjectForm from "../../component/ProjectForm";
 
 export default function Admin() {
 
-  const { blogs } = usePage().props
+  const { blogs, projects } = usePage().props
   const [editBlog, setEditBlog] = useState({})
 
-  const projects = [
-    {
-      id: 1,
-      title: "Finance Dashboard",
-      description: "Analytics platform",
-      category: "Web development",
-      dateLabel: "Jan 12, 2026"
-    },
-  ];
+  // const projects = [
+  //   {
+  //     id: 1,
+  //     title: "Finance Dashboard",
+  //     description: "Analytics platform",
+  //     category: "Web development",
+  //     dateLabel: "Jan 12, 2026"
+  //   },
+  // ];
 
-  const modalRef = useRef(null)
+  const blogModalRef = useRef(null)
+  const projectModalRef = useRef(null)
 
-  const toggleModal = (newBlog = true) => {
-    if (newBlog) {
+  const toggleModal = (modalRef, newItem = true) => {
+    console.log(modalRef)
+    if (newItem) {
       setEditBlog({})
     }
     modalRef.current.classList.toggle("active")
@@ -38,7 +41,7 @@ export default function Admin() {
       setEditBlog({})
     }
 
-    toggleModal(false)
+    toggleModal(blogModalRef, false)
   }
 
   return (
@@ -54,16 +57,20 @@ export default function Admin() {
 
       <section className="dashboard">
 
-        <Table name={"projects"} toggleModal={toggleModal}>
+        <Table name={"projects"} modalRef={projectModalRef} toggleModal={toggleModal}>
           {projects}
         </Table>
-        <Table name={"Blogs"} toggleModal={toggleModal} populateModal={populateModal}>
+        <Table name={"Blogs"} modalRef={blogModalRef}  toggleModal={toggleModal} populateModal={populateModal}>
           {blogs}
         </Table>
       </section>
 
-      <Modal modalRef={modalRef} toggleModal={toggleModal} populateModal={populateModal}>
-        <BlogForm blog={editBlog} toggleModal={toggleModal}/>
+      <Modal modalRef={blogModalRef} toggleModal={toggleModal} populateModal={populateModal}>
+        <BlogForm modalRef={blogModalRef} blog={editBlog} toggleModal={toggleModal}/>
+      </Modal>
+
+      <Modal modalRef={projectModalRef} toggleModal={toggleModal} >
+        <ProjectForm />
       </Modal>
     </article>
   )
