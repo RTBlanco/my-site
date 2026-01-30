@@ -1,19 +1,6 @@
-import { Form, useForm } from "@inertiajs/react";
+import { Form, Link} from "@inertiajs/react";
 
 const ProjectForm = ({modalRef, toggleModal}) => {
-
-  // const {delete: destroy } = useForm({})
-  // const newBlog =  Object.keys(blog).length === 0
-  const newBlog = true
-
-  // const handleDelete = (e, id) => {
-  //   e.preventDefault()
-  //   destroy(`/Blogs/${id}`,{
-  //     preserveScroll: true
-  //   })
-  //   toggleModal()
-  // }
-  // console.log(newBlog)
 
   return (
     <section className="blog-form" style={ { "width" : "100% "} }>
@@ -38,6 +25,11 @@ const ProjectForm = ({modalRef, toggleModal}) => {
             <ion-icon name="enter-outline"></ion-icon>
             <span>Save</span>
           </button>
+
+          <Link href="/Portfolio/add_all" method="post" as={"button"} className="form-btn">
+            <ion-icon name="logo-github"></ion-icon>
+            <span>Add all</span>
+          </Link>
         </div>
 
       </Form>
