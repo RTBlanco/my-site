@@ -21,7 +21,7 @@ const ProjectForm = ({modalRef, toggleModal}) => {
       <h3 className="h3 form-title">{"Create Project"}</h3>
 
       <Form 
-        action={"/Blogs"} 
+        action={"/projects"} 
         method={"post"} 
         className="Form" 
         data-form
@@ -31,7 +31,7 @@ const ProjectForm = ({modalRef, toggleModal}) => {
         }}
         >
 
-        <textarea defaultValue={""} name="project_url" className="form-input" placeholder="Project Url"  data-form-input></textarea>
+        <textarea defaultValue={""} name="link" className="form-input" placeholder="Project Url"  data-form-input></textarea>
 
         <div className="form-btns">
           <button onClick={(e) => toggleModal(modalRef)} className="form-btn" type="submit" data-form-btn>
