@@ -70,7 +70,7 @@ export default function Admin() {
       </Modal>
 
       <Modal modalRef={projectModalRef} toggleModal={toggleModal} >
-        <ProjectForm />
+        <ProjectForm modalRef={projectModalRef} toggleModal={toggleModal}/>
       </Modal>
     </article>
   )

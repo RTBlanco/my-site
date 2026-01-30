@@ -3,7 +3,7 @@ const Modal = ({modalRef, toggleModal, children}) => {
   return(
     <div ref={modalRef} className="modal-container" data-modal-container>
       <div className="overlay" onClick={(e) => toggleModal(modalRef)} data-overlay></div>
-      <section className="testimonials-modal">
+      <section className="testimonials-modal" style={ { "width" : "100% "} }>
         <button onClick={(e) => toggleModal(modalRef)} className="modal-close-btn" data-modal-close-btn>
           <ion-icon name="close-outline"></ion-icon>
         </button>

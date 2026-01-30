@@ -1,27 +1,28 @@
 import { Form, useForm } from "@inertiajs/react";
 
-const ProjectForm = ({blog, toggleModal}) => {
+const ProjectForm = ({modalRef, toggleModal}) => {
 
-  const {delete: destroy } = useForm({})
+  // const {delete: destroy } = useForm({})
   // const newBlog =  Object.keys(blog).length === 0
   const newBlog = true
 
-  const handleDelete = (e, id) => {
-    e.preventDefault()
-    destroy(`/Blogs/${id}`,{
-      preserveScroll: true
-    })
-    toggleModal()
-  }
-  console.log(newBlog)
-  return (
-    <section className="blog-form">
+  // const handleDelete = (e, id) => {
+  //   e.preventDefault()
+  //   destroy(`/Blogs/${id}`,{
+  //     preserveScroll: true
+  //   })
+  //   toggleModal()
+  // }
+  // console.log(newBlog)
 
-      <h3 className="h3 form-title">{newBlog ? "Create Blog" : `Edit ${blog.title}`}</h3>
+  return (
+    <section className="blog-form" style={ { "width" : "100% "} }>
+
+      <h3 className="h3 form-title">{"Create Project"}</h3>
 
       <Form 
-        action={newBlog ? "/Blogs" : `/Blogs/${blog.id}`} 
-        method={newBlog ? "post" : "put"} 
+        action={"/Blogs"} 
+        method={"post"} 
         className="Form" 
         data-form
         options={{
@@ -29,26 +30,11 @@ const ProjectForm = ({blog, toggleModal}) => {
           preserveScroll: true
         }}
         >
-        <div className="input-wrapper">
-          <input type="file" name="[blog]image" className="form-input" placeholder="image" accept="image/*" data-form-input />
-        </div>
 
-        <div className="input-wrapper">
-          {/* <input defaultValue={blog.title} type="text" name="title" className="form-input" placeholder="Blog Title"  data-form-input />
-          <input defaultValue={blog.category} type="text" name="category" className="form-input" placeholder="Blog Category" data-form-input /> */}
-        </div>
-
-        {/* <textarea defaultValue={blog.content} name="content" className="form-input" placeholder="Content"  data-form-input></textarea> */}
+        <textarea defaultValue={""} name="project_url" className="form-input" placeholder="Project Url"  data-form-input></textarea>
 
         <div className="form-btns">
-          {newBlog ||
-            <button onClick={(e) => handleDelete(e, blog.id)} className="form-btn" type="submit" data-form-btn>
-              <ion-icon name="trash-bin-outline"></ion-icon>
-              <span>Delete</span>
-            </button>
-          }
-
-          <button onClick={() => toggleModal(newBlog)} className="form-btn" type="submit" data-form-btn>
+          <button onClick={(e) => toggleModal(modalRef)} className="form-btn" type="submit" data-form-btn>
             <ion-icon name="enter-outline"></ion-icon>
             <span>Save</span>
           </button>
