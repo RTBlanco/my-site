@@ -6,9 +6,19 @@ class ProjectsController < ApplicationController
     link = project_params[:link]
       if link.include?("github.com")
         repo_name = link.match(%r{https://github\.com/(.+?)\/?$})[1]
-        Octokit.repo(repo_name)
+        repo = Octokit.repo(repo_name)
+
+        Project.create(title: repo.name, description: repo.description, link: repo.html_url)
       end
-    asdad
+    # asdad
+    redirect_to dashboard_path
+  end
+
+  def index
+    projects = Blog.all.map do |blog|
+      ProjectSerializer.new(blog).as_hash
+    end
+    render inertia: "containers/Portfolio", props: { projects: }
   end
 
   def destroy
