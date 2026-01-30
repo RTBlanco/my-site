@@ -31,7 +31,7 @@ class AdminController < ApplicationController
   end
 
   def login
-    return redirect_to dashboard_path unless admin_signed_in?
+    return redirect_to dashboard_path unless !admin_signed_in?
 
     render inertia: "containers/admin/AdminLogin"
   end
