@@ -59,7 +59,7 @@ const Portfolio = () => {
 
         </ul>
 
-        {/* <div className="filter-select-box">
+        <div className="filter-select-box">
 
           <button className="filter-select" data-select>
 
@@ -70,7 +70,7 @@ const Portfolio = () => {
             </div>
 
           </button>
-        </div> */}
+        </div>
 
         <ul className="project-list">
           {renderProjects()}
