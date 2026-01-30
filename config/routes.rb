@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :projects, path: :Portfolio
+  resources :projects, path: :Portfolio do
+    collection do
+      post :add_all
+    end
+  end
   resources :blogs, path: :Blogs
   devise_for :admins, skip: :all
 
