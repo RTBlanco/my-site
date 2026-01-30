@@ -21,7 +21,7 @@ const ProjectForm = ({modalRef, toggleModal}) => {
       <h3 className="h3 form-title">{"Create Project"}</h3>
 
       <Form 
-        action={"/projects"} 
+        action={"/Portfolio"} 
         method={"post"} 
         className="Form" 
         data-form
