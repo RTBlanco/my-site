@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { usePage } from "@inertiajs/react"
+import githubLogo from "../../images/GitHub_Invertocat_White_Clearspace.svg"
 
 const Portfolio = () => {
 
@@ -32,7 +33,7 @@ const Portfolio = () => {
               <ion-icon name="link-outline"></ion-icon>
             </div>
 
-            <img src={project.image_url} alt={project.title} loading="lazy" />
+            <img src={project.image_url || githubLogo } alt={project.title} loading="lazy" />
           </figure>
 
           <h3 className="project-title">{project.title}</h3>
