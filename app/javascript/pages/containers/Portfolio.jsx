@@ -1,121 +1,13 @@
-import project1 from "../../images/project-1.jpg"
-import project2 from "../../images/project-2.png"
-import project3 from "../../images/project-3.jpg"
-import project4 from "../../images/project-4.png"
-import project5 from "../../images/project-5.png"
-import project6 from "../../images/project-6.png"
-import project7 from "../../images/project-7.png"
-import project8 from "../../images/project-8.jpg"
-import project9 from "../../images/project-9.png"
 import { useState } from "react"
-
+import { usePage } from "@inertiajs/react"
 
 const Portfolio = () => {
-  const projectsData = [
-    {
-      id: 1,
-      title: "Finance",
-      category: "web development",
-      displayCategory: "Web development",
-      image: project1,
-      alt: "finance",
-      icon: "eye-outline",
-      active: true,
-      link: "#",
-    },
-    {
-      id: 2,
-      title: "Orizon",
-      category: "web development",
-      displayCategory: "Web development",
-      image: project2,
-      alt: "orizon",
-      icon: "eye-outline",
-      active: true,
-      link: "#",
-    },
-    {
-      id: 3,
-      title: "Fundo",
-      category: "web design",
-      displayCategory: "Web design",
-      image: project3,
-      alt: "fundo",
-      icon: "eye-outline",
-      active: true,
-      link: "#",
-    },
-    {
-      id: 4,
-      title: "Brawlhalla",
-      category: "applications",
-      displayCategory: "Applications",
-      image: project4,
-      alt: "brawlhalla",
-      icon: "eye-outline",
-      active: true,
-      link: "#",
-    },
-    {
-      id: 5,
-      title: "DSM.",
-      category: "web design",
-      displayCategory: "Web design",
-      image: project5,
-      alt: "dsm.",
-      icon: "eye-outline",
-      active: true,
-      link: "#",
-    },
-    {
-      id: 6,
-      title: "MetaSpark",
-      category: "web design",
-      displayCategory: "Web design",
-      image: project6,
-      alt: "metaspark",
-      icon: "eye-outline",
-      active: true,
-      link: "#",
-    },
-    {
-      id: 7,
-      title: "Summary",
-      category: "web development",
-      displayCategory: "Web development",
-      image: project7,
-      alt: "summary",
-      icon: "eye-outline",
-      active: true,
-      link: "#",
-    },
-    {
-      id: 8,
-      title: "Task Manager",
-      category: "applications",
-      displayCategory: "Applications",
-      image: project8,
-      alt: "task manager",
-      icon: "eye-outline",
-      active: true,
-      link: "#",
-    },
-    {
-      id: 9,
-      title: "Arrival",
-      category: "web development",
-      displayCategory: "Web development",
-      image: project9,
-      alt: "arrival",
-      icon: "eye-outline",
-      active: true,
-      link: "#",
-    },
-  ];
+
+  const { projects } = usePage().props
 
   // dynamically gather all the categorys
 
-  const listOptions = ["All", "Web design", "Applications", "Web development"]
+  const listOptions = ["All", "CAD", "Coding"]
 
   const [selOption, setSelOption] = useState("All")
 
@@ -129,25 +21,23 @@ const Portfolio = () => {
   )
 
   const renderProjects = () => {
-    console.log(selOption)
-
-    const filteredProjects =  projectsData.filter(item => selOption === "All" || item.displayCategory === selOption)
+    const filteredProjects =  projects.filter(item => selOption.toLowerCase() === "all" || item.category === selOption.toLowerCase())
    
     return filteredProjects.map(project => (
       <li key={project.id} className="project-item active" data-filter-item data-category={project.category}>
-        <a href={project.link}>
+        <a href={project.link} target="_blank">
 
           <figure className="project-img">
             <div className="project-item-icon-box">
-              <ion-icon name="eye-outline"></ion-icon>
+              <ion-icon name="link-outline"></ion-icon>
             </div>
 
-            <img src={project.image} alt={project.alt} loading="lazy" />
+            <img src={project.image_url} alt={project.title} loading="lazy" />
           </figure>
 
           <h3 className="project-title">{project.title}</h3>
 
-          <p className="project-category">{project.displayCategory}</p>
+          <p className="project-category">{project.category}</p>
 
         </a>
       </li>
@@ -169,7 +59,7 @@ const Portfolio = () => {
 
         </ul>
 
-        <div className="filter-select-box">
+        {/* <div className="filter-select-box">
 
           <button className="filter-select" data-select>
 
@@ -180,7 +70,7 @@ const Portfolio = () => {
             </div>
 
           </button>
-        </div>
+        </div> */}
 
         <ul className="project-list">
           {renderProjects()}
