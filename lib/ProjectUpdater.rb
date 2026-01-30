@@ -1,13 +1,28 @@
 module ProjectUpdater
+  extend self
 
+  # add a project
   def add_project(url)
-    if url.include("https://github")
+    if url.include?("https://github.com")
       repo_name = url.match(%r{https://github\.com/(.+?)\/?$})[1]
       add_github_project(repo_name)
     end
   end
+
   # will get all the projects with the 🔥 emoji in the description
-  def populate_lit_git_projects;end
+  def populate_lit_git_projects
+    repos = Octokit.repos(nil, { affiliation: "owner" }).reject(&:fork)
+    repos.each do |repo|
+      if !repo.description.nil? && repo.description.include?("🔥")
+        Project.create do |p|
+          p.title = repo.name
+          p.description = repo.description
+          p.link = repo.html_url
+          p.category = "coding"
+        end
+      end
+    end
+  end
 
   private
 
