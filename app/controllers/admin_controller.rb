@@ -2,11 +2,15 @@ class AdminController < ApplicationController
   before_action :authenticate_admin, only: [ :dashboard ]
 
   def dashboard
-    blogs = Blog.all.map do |blog|
-      BlogSerializer.new(blog).as_json
+    projects = Project.all.map do |project|
+      ProjectSerializer.new(project).as_hash
     end
 
-    render inertia: "containers/admin/Admin", props: { blogs: }
+    blogs = Blog.all.map do |blog|
+      BlogSerializer.new(blog).as_hash
+    end
+
+    render inertia: "containers/admin/Admin", props: { blogs:, projects: }
   end
 
   def sign_admin_in
