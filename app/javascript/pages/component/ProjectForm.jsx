@@ -26,7 +26,7 @@ const ProjectForm = ({modalRef, toggleModal}) => {
             <span>Save</span>
           </button>
 
-          <Link href="/Portfolio/add_all" method="post" as={"button"} className="form-btn">
+          <Link href="/Portfolio/add_all" onClick={(e) => toggleModal(modalRef)} method="post" as={"button"} className="form-btn">
             <ion-icon name="logo-github"></ion-icon>
             <span>Add all</span>
           </Link>
