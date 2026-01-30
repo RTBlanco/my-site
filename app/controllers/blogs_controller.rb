@@ -35,7 +35,7 @@ class BlogsController < ApplicationController
   def index
     # issue here in the future
     blogs = Blog.all.map do |blog|
-      BlogSerializer.new(blog).as_json
+      BlogSerializer.new(blog).as_hash
     end
     render inertia: "containers/blogs/Blogs", props: { blogs: }
   end
