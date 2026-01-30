@@ -29,7 +29,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-    render inertia: "containers/blogs/Blog", props: { blog: BlogSerializer.new(@blog).as_json }
+    render inertia: "containers/blogs/Blog", props: { blog: BlogSerializer.new(@blog).as_hash }
   end
 
   def index
