@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :projects
+  resources :projects, path: :Portfolio
   resources :blogs, path: :Blogs
   devise_for :admins, skip: :all
 
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   inertia "About" => "containers/About"
   inertia "Resume" => "containers/Resume"
-  inertia "Portfolio" => "containers/Portfolio"
+  # inertia "Portfolio" => "containers/Portfolio"
   # inertia "Blogs" => "containers/blogs/Blogs"
   # inertia "Blog" => "containers/blogs/Blog"
   inertia "Contact" => "containers/Contact"
