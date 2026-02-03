@@ -12,9 +12,11 @@ const TestimonialModal = ({modalRef, toggleModal, testimonial}) => {
         </button>
 
         <div className="modal-img-wrapper">
-          <figure className="modal-avatar-box">
-            <img src={testimonial.avatar} alt="Daniel lewis" width="80" data-modal-img />
-          </figure>
+          <a target="_blank" href="https://www.linkedin.com/in/ronnytoribio/#recommendations">
+            <figure className="modal-avatar-box">
+              <img src={testimonial.avatar} alt="Daniel lewis" width="80" data-modal-img />
+            </figure>
+          </a>
 
           <img src={IconQuote} alt="quote icon" />
         </div>

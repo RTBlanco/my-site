@@ -9,11 +9,11 @@ import TestimonialModal from "./modals/TestimonialModal"
 const Testimonials = () => {
   const [modalState, setModalState] = useState({
     id: 1,
-    name: "Daniel Lewis",
-    avatar: Avatar,
-    date: "14 June, 2021",
-    text: "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia."
-    
+    name: "Ian Iyengar",
+    // avatar: Avatar,
+    avatar: "https://media.licdn.com/dms/image/v2/D5603AQFEZlC8kEhb9g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1688857381924?e=1771459200&v=beta&t=52WF4CJgv5M0c19snrr5iXSn_aOAnuo4y5ZEpphLe3U",
+    date: "July 31, 2025",
+    text: "I had the pleasure of working alongside Ronny at KGA, where we both contributed to the internal BigTop platform. Ronny is not only a skilled developer, but also an incredibly thoughtful and collaborative teammate. Whether we were pair programming to troubleshoot complex issues or brainstorming ways to enhance the user experience for clinicians, Ronny brought sharp technical insight and a calm, solutions-focused approach to every challenge. We worked closely together on new Ruby on Rails features and consistently supported one another through debugging sessions and JavaScript enhancements. His ability to break down problems and his eagerness to share knowledge made a big impact on our team and helped raise the overall quality of our work. Anyone would be lucky to have Ronny on their dev team—he’s a reliable, curious, and collaborative engineer who genuinely makes those around him better."
   })
 
   const modalRef = useRef(null)
@@ -21,32 +21,12 @@ const Testimonials = () => {
   const testimonialsItems = [
     {
       id: 1,
-      name: "Daniel Lewis",
-      avatar: Avatar,
-      date: "14 June, 2021",
-      text: "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia."
+      name: "Ian Iyengar",
+      // avatar: Avatar,
+      avatar: "https://media.licdn.com/dms/image/v2/D5603AQFEZlC8kEhb9g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1688857381924?e=1771459200&v=beta&t=52WF4CJgv5M0c19snrr5iXSn_aOAnuo4y5ZEpphLe3U",
+      date: "July 31, 2025",
+      text: "I had the pleasure of working alongside Ronny at KGA, where we both contributed to the internal BigTop platform. Ronny is not only a skilled developer, but also an incredibly thoughtful and collaborative teammate. Whether we were pair programming to troubleshoot complex issues or brainstorming ways to enhance the user experience for clinicians, Ronny brought sharp technical insight and a calm, solutions-focused approach to every challenge. We worked closely together on new Ruby on Rails features and consistently supported one another through debugging sessions and JavaScript enhancements. His ability to break down problems and his eagerness to share knowledge made a big impact on our team and helped raise the overall quality of our work. Anyone would be lucky to have Ronny on their dev team—he’s a reliable, curious, and collaborative engineer who genuinely makes those around him better."
     },
-    {
-      id: 2,
-      name: "Jessica Miller",
-      avatar: Avatar2,
-      date: "14 June, 2021",
-      text: "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia."
-    },
-    {
-      id: 3,
-      name: "Emily Evans",
-      avatar: Avatar3,
-      date: "14 June, 2021",
-      text: "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia."
-    },
-    {
-      id: 4,
-      name: "Henry William",
-      avatar: Avatar4,
-      date: "14 June, 2021",
-      text: "Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia."
-    }
   ];
 
   const toggleModal = () => {
