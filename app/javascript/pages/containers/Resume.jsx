@@ -20,41 +20,12 @@ const Resume = ({active}) => {
 
           <li className="timeline-item">
 
-            <h4 className="h4 timeline-item-title">University school of the arts</h4>
+            <h4 className="h4 timeline-item-title">Flatiron School</h4>
 
-            <span>2007 — 2008</span>
-
-            <p className="timeline-text">
-              Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-              quas molestias
-              exceptur.
-            </p>
-
-          </li>
-
-          <li className="timeline-item">
-
-            <h4 className="h4 timeline-item-title">New york academy of art</h4>
-
-            <span>2006 — 2007</span>
+            <span>2021</span>
 
             <p className="timeline-text">
-              Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-              omnis..
-            </p>
-
-          </li>
-
-          <li className="timeline-item">
-
-            <h4 className="h4 timeline-item-title">High school of art and design</h4>
-
-            <span>2002 — 2004</span>
-
-            <p className="timeline-text">
-              Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-              magni dolores
-              eos.
+              Full Stack Web Development, Ruby on Rails, and JavaScript programming bootcamp
             </p>
 
           </li>
@@ -77,42 +48,28 @@ const Resume = ({active}) => {
 
           <li className="timeline-item">
 
-            <h4 className="h4 timeline-item-title">Creative director</h4>
+            <h4 className="h4 timeline-item-title">Full-stack Software Developer</h4>
 
-            <span>2015 — Present</span>
+            <span>Dec 2021 — Jul 2025</span>
 
             <p className="timeline-text">
-              Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-              molestias
-              exceptur.
+              Developed internal API systems for client scheduling, led architecture of secure messaging systems, 
+              and built client-facing APIs. Authored onboarding documentation and trained new developers on 
+              internal tools. Designed testing scenarios for features using RSpec.
             </p>
 
           </li>
 
           <li className="timeline-item">
 
-            <h4 className="h4 timeline-item-title">Art director</h4>
+            <h4 className="h4 timeline-item-title">Software QA Engineer</h4>
 
-            <span>2013 — 2015</span>
-
-            <p className="timeline-text">
-              Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-              quas molestias
-              exceptur.
-            </p>
-
-          </li>
-
-          <li className="timeline-item">
-
-            <h4 className="h4 timeline-item-title">Web designer</h4>
-
-            <span>2010 — 2013</span>
+            <span>Jan 2019 — Dec 2021</span>
 
             <p className="timeline-text">
-              Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-              quas molestias
-              exceptur.
+              Collaborated in Agile testing teams performing manual UI testing on mobile and desktop platforms. 
+              Trained incoming QA team members and conducted functional and API notification testing to verify 
+              system reliability.
             </p>
 
           </li>
@@ -130,7 +87,59 @@ const Resume = ({active}) => {
           <li className="skills-item">
 
             <div className="title-wrapper">
-              <h5 className="h5">Web design</h5>
+              <h5 className="h5">JavaScript/TypeScript</h5>
+              <data value="90">90%</data>
+            </div>
+
+            <div className="skill-progress-bg">
+              <div className="skill-progress-fill" style={{ width: "90%" }}></div>
+            </div>
+
+          </li>
+
+          <li className="skills-item">
+
+            <div className="title-wrapper">
+              <h5 className="h5">React.js</h5>
+              <data value="90">90%</data>
+            </div>
+
+            <div className="skill-progress-bg">
+              <div className="skill-progress-fill" style={{ width: "90%" }}></div>
+            </div>
+
+          </li>
+
+          <li className="skills-item">
+
+            <div className="title-wrapper">
+              <h5 className="h5">Ruby on Rails</h5>
+              <data value="85">85%</data>
+            </div>
+
+            <div className="skill-progress-bg">
+              <div className="skill-progress-fill" style={{ width: "85%"}}></div>
+            </div>
+
+          </li>
+
+          <li className="skills-item">
+
+            <div className="title-wrapper">
+              <h5 className="h5">Python</h5>
+              <data value="75">75%</data>
+            </div>
+
+            <div className="skill-progress-bg">
+              <div className="skill-progress-fill" style={{ width: "75%" }}></div>
+            </div>
+
+          </li>
+
+          <li className="skills-item">
+
+            <div className="title-wrapper">
+              <h5 className="h5">SQL/PostgreSQL</h5>
               <data value="80">80%</data>
             </div>
 
@@ -143,38 +152,12 @@ const Resume = ({active}) => {
           <li className="skills-item">
 
             <div className="title-wrapper">
-              <h5 className="h5">Graphic design</h5>
-              <data value="70">70%</data>
+              <h5 className="h5">Testing (RSpec/Capybara)</h5>
+              <data value="80">80%</data>
             </div>
 
             <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "70%" }}></div>
-            </div>
-
-          </li>
-
-          <li className="skills-item">
-
-            <div className="title-wrapper">
-              <h5 className="h5">Branding</h5>
-              <data value="90">90%</data>
-            </div>
-
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "90%"}}></div>
-            </div>
-
-          </li>
-
-          <li className="skills-item">
-
-            <div className="title-wrapper">
-              <h5 className="h5">WordPress</h5>
-              <data value="50">50%</data>
-            </div>
-
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "50%" }}></div>
+              <div className="skill-progress-fill" style={{ width: "80%" }}></div>
             </div>
 
           </li>
