@@ -1,8 +1,3 @@
-
-import Avatar from "../../images/avatar-1.png"
-import Avatar2 from "../../images/avatar-2.png"
-import Avatar3 from "../../images/avatar-3.png"
-import Avatar4 from "../../images/avatar-4.png"
 import { useRef, useState } from "react"
 import TestimonialModal from "./modals/TestimonialModal"
 
