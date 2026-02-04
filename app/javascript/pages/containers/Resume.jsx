@@ -80,89 +80,46 @@ const Resume = ({active}) => {
 
       <section className="skill">
 
-        <h3 className="h3 skills-title">My skills</h3>
+        <h3 className="h3 skills-title">Technical Skills</h3>
 
-        <ul className="skills-list content-card">
+        <div className="skills-list content-card">
 
-          <li className="skills-item">
+          <div className="skill-category">
+            <h4 className="h4">Languages</h4>
+            <p className="skill-items">
+              JavaScript, TypeScript, Ruby, Python, C++, C#, SQL, HTML, CSS, SASS
+            </p>
+          </div>
 
-            <div className="title-wrapper">
-              <h5 className="h5">JavaScript/TypeScript</h5>
-              <data value="90">90%</data>
-            </div>
+          <div className="skill-category">
+            <h4 className="h4">Frameworks & Libraries</h4>
+            <p className="skill-items">
+              React.js, React Native, Redux, Ruby on Rails, Stimulus JS, Sinatra, Flask, Bootstrap, Express
+            </p>
+          </div>
 
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "90%" }}></div>
-            </div>
+          <div className="skill-category">
+            <h4 className="h4">Testing</h4>
+            <p className="skill-items">
+              RSpec, Capybara, Selenium
+            </p>
+          </div>
 
-          </li>
+          <div className="skill-category">
+            <h4 className="h4">Databases & ORMs</h4>
+            <p className="skill-items">
+              PostgreSQL, MongoDB, ActiveRecord, SQLAlchemy, Peewee
+            </p>
+          </div>
 
-          <li className="skills-item">
+          <div className="skill-category">
+            <h4 className="h4">Tools & Technologies</h4>
+            <p className="skill-items">
+              Git, Arduino, PyGame, Tkinter, RESTful APIs, Agile/Scrum
+            </p>
+          </div>
 
-            <div className="title-wrapper">
-              <h5 className="h5">React.js</h5>
-              <data value="90">90%</data>
-            </div>
-
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "90%" }}></div>
-            </div>
-
-          </li>
-
-          <li className="skills-item">
-
-            <div className="title-wrapper">
-              <h5 className="h5">Ruby on Rails</h5>
-              <data value="85">85%</data>
-            </div>
-
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "85%"}}></div>
-            </div>
-
-          </li>
-
-          <li className="skills-item">
-
-            <div className="title-wrapper">
-              <h5 className="h5">Python</h5>
-              <data value="75">75%</data>
-            </div>
-
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "75%" }}></div>
-            </div>
-
-          </li>
-
-          <li className="skills-item">
-
-            <div className="title-wrapper">
-              <h5 className="h5">SQL/PostgreSQL</h5>
-              <data value="80">80%</data>
-            </div>
-
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "80%" }}></div>
-            </div>
-
-          </li>
-
-          <li className="skills-item">
-
-            <div className="title-wrapper">
-              <h5 className="h5">Testing (RSpec/Capybara)</h5>
-              <data value="80">80%</data>
-            </div>
-
-            <div className="skill-progress-bg">
-              <div className="skill-progress-fill" style={{ width: "80%" }}></div>
-            </div>
-
-          </li>
-
-        </ul>
+        </div>
 
       </section>
 
