@@ -777,7 +777,9 @@ main {
 
 .article-title { margin-bottom: 30px; }
 
-
+.skill-items {
+  color: var(--vegas-gold);
+}
 /**
  * education and experience 
  */
@@ -1516,8 +1518,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
-
-
 
   /**
    * #PORTFOLIO, BLOG
