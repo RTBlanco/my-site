@@ -20,7 +20,7 @@ const About = () => {
 
       <Services />
       <Testimonials />
-      <Clients />
+      {/* <Clients /> */}
     </article>
   )
 }
