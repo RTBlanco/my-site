@@ -16,9 +16,9 @@ const Services = () => {
       text: "High-quality development of sites at the professional level."
     },
     {
-      title: "Mobile Apps",
-      image: IconApp,
-      text: "Professional development of applications for iOS and Android."
+      title: "Hardware Prototyping",
+      image: IconDev,
+      text: "prototyping of embedded hardware design to bring ideas to life."
     },
     {
       title: "Photography",
