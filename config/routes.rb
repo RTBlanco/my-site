@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   # inertia "Blog" => "containers/blogs/Blog"
   inertia "Contact" => "containers/Contact"
 
+  post "contact" => "application#contact"
+
   scope :admin do
     # inertia "dashboard" => "containers/admin/Admin"
     get "/dashboard" => "admin#dashboard"
