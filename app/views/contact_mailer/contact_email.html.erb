@@ -1,0 +1,36 @@
+
+
+<div class="container">
+  <div class="header">
+    <h1>New Contact Message</h1>
+    <div class="accent-line"></div>
+  </div>
+  
+  <div class="content">
+      <div class="notification">
+        <p><span class="sender"><%= @full_name %></span> (<%= @email %>) sent you a message through your portfolio contact form.</p>
+      </div>
+      
+      <div class="info-section">
+        <div class="info-label">From</div>
+        <div class="info-value"><%= @full_name %></div>
+      </div>
+      
+      <div class="info-section">
+        <div class="info-label">Email Address</div>
+        <div class="info-value"><%= @email %></div>
+      </div>
+      
+      <div class="info-section">
+        <div class="info-label">Message</div>
+        <div class="message-box">
+          <p><%= @message %></p>
+        </div>
+      </div>
+  </div>
+  
+  <div class="footer">
+    <p>This message was sent via the contact form on <span class="brand">Ronny Toribio Blanco</span>'s portfolio website.</p>
+    <p style="margin-top: 10px;">Boston, Massachusetts</p>
+  </div>
+</div>
