@@ -19,10 +19,24 @@ class ApplicationController < ActionController::Base
     render inertia: "containers/Porfolio"
   end
 
+  def contact
+    contact = contact_params
+
+    ContactMailer.contact_email(contact[:email], contact[:message], contact[:full_name]).deliver_later
+
+    # asdfsd
+    # set up contact information
+  end
 
   def authenticate_admin
     unless admin_signed_in?
       redirect_to :root
     end
+  end
+
+  private
+
+  def contact_params
+    params.permit(:full_name, :email, :message)
   end
 end
