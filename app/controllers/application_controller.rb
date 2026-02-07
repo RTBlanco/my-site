@@ -25,8 +25,7 @@ class ApplicationController < ActionController::Base
     ContactMailer.contact_email(contact[:email], contact[:message], contact[:full_name]).deliver_later
 
     # asdfsd
-    # set up contact information
-    # render inertia: "containers/Contact"
+    redirect_to "/Contact"
   end
 
   def authenticate_admin

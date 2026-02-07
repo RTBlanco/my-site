@@ -20,7 +20,16 @@ const Contact = () => {
 
         <h3 className="h3 form-title">Contact Form</h3>
 
-        <Form action={"/contact"} method={"post"} className="form" data-form>
+        <Form 
+          action={"/contact"}
+          method={"post"} 
+          className="form" 
+          data-form 
+          resetOnSuccess
+          options={{
+            preserveScroll: true,
+          }}
+          >
 
           <div className="input-wrapper">
             <input type="text" name="full_name" className="form-input" placeholder="Full name" required data-form-input />
