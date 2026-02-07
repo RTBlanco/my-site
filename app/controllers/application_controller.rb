@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
 
     # asdfsd
     # set up contact information
+    # render inertia: "containers/Contact"
   end
 
   def authenticate_admin
