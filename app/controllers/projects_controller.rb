@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    # delete projects
+    Porject.find(params[:id]).delete
   end
 
   def add_all
