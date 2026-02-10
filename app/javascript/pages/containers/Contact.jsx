@@ -28,6 +28,7 @@ const Contact = () => {
           resetOnSuccess
           options={{
             preserveScroll: true,
+            preserveState: true
           }}
           >
 
