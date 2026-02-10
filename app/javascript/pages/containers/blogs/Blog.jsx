@@ -1,9 +1,9 @@
-import blog1 from "../../../images/blog-1.jpg"
+import defaultImage from "../../../../assets/images/default.png"
 import { usePage } from "@inertiajs/react"
 
 const Blog = () => {
 
-  const { blog} = usePage().props
+  const { blog } = usePage().props
   
   return (
     
@@ -17,7 +17,7 @@ const Blog = () => {
 
         <div>
           <figure className="blog-banner-box">
-            <img src={blog.image} alt="image" loading="lazy" />
+            <img src={blog.image || defaultImage } alt="image" loading="lazy" />
           </figure>
 
             <div className="blog-content">
@@ -33,7 +33,7 @@ const Blog = () => {
               <h3 className="h3 blog-item-title">{blog.title}</h3>
 
               <p className="blog-text">
-                {blog.excerpt}
+                {blog.content}
               </p>
 
             </div>
