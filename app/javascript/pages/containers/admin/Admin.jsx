@@ -46,10 +46,10 @@ export default function Admin() {
 
       <section className="dashboard">
 
-        <Table name={"projects"} modalRef={projectModalRef} toggleModal={toggleModal}>
+        <Table name={"projects"} modalRef={projectModalRef} toggleModal={toggleModal} isProject={true}>
           {projects}
         </Table>
-        <Table name={"Blogs"} modalRef={blogModalRef} toggleModal={toggleModal} populateModal={populateModal}>
+        <Table name={"Blogs"} modalRef={blogModalRef} toggleModal={toggleModal} isProject={false} populateModal={populateModal}>
           {blogs}
         </Table>
       </section>
