@@ -6,9 +6,7 @@ const Portfolio = () => {
 
   const { projects } = usePage().props
 
-  // dynamically gather all the categorys
-
-  const listOptions = ["All", "CAD", "Coding"]
+  const listOptions = ["All", ...Object.keys(projects.reduce((prev, curr) => ({...prev, [curr.category]: curr }),{}))]
 
   const [selOption, setSelOption] = useState("All")
 
