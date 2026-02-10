@@ -9,17 +9,6 @@ export default function Admin() {
 
   const { blogs, projects } = usePage().props
   const [editBlog, setEditBlog] = useState({})
-
-  // const projects = [
-  //   {
-  //     id: 1,
-  //     title: "Finance Dashboard",
-  //     description: "Analytics platform",
-  //     category: "Web development",
-  //     dateLabel: "Jan 12, 2026"
-  //   },
-  // ];
-
   const blogModalRef = useRef(null)
   const projectModalRef = useRef(null)
 
@@ -60,7 +49,7 @@ export default function Admin() {
         <Table name={"projects"} modalRef={projectModalRef} toggleModal={toggleModal}>
           {projects}
         </Table>
-        <Table name={"Blogs"} modalRef={blogModalRef}  toggleModal={toggleModal} populateModal={populateModal}>
+        <Table name={"Blogs"} modalRef={blogModalRef} toggleModal={toggleModal} populateModal={populateModal}>
           {blogs}
         </Table>
       </section>
