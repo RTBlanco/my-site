@@ -1127,6 +1127,12 @@ main {
   line-height: 1.6;
 }
 
+.truncated-text {
+  max-width: 354px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 
 
