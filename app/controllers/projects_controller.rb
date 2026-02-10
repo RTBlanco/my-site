@@ -17,7 +17,9 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    Porject.find(params[:id]).delete
+    Project.find(params[:id]).delete
+
+    redirect_to dashboard_path
   end
 
   def add_all
