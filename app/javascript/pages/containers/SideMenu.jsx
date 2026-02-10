@@ -1,5 +1,4 @@
 import myAvatar from "../../images/MyAvatar.png"
-// import myAvatar from "../../images/avatar-1.png"
 import { useRef } from "react"
 
 const SideMenu = () => {
