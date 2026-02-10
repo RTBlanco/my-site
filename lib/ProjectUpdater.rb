@@ -18,7 +18,7 @@ module ProjectUpdater
           p.title = repo.name
           p.description = repo.description
           p.link = repo.html_url
-          p.category = "coding"
+          p.category = "Coding"
         end
       end
     end
@@ -33,7 +33,7 @@ module ProjectUpdater
       p.title = repo.name
       p.description = repo.description
       p.link = repo.html_url
-      p.category = "coding"
+      p.category = "Coding"
       p.image_url = image.is_a?(String) ? nil : image[:download_url]
     end
   end
