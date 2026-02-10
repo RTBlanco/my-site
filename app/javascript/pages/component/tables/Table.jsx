@@ -1,4 +1,6 @@
-const Table = ({ modalRef, children, name, toggleModal, populateModal}) => {
+import { Link } from "@inertiajs/react"
+
+const Table = ({ modalRef, children, name, toggleModal, populateModal, isProject}) => {
 
   return (
     <div className="table-wrapper">
@@ -25,6 +27,11 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal}) => {
                   <div className="project-info">
                     <h3>{child.title}</h3>
                   </div>
+                  {isProject && 
+                    <Link href={`/Portfolio/${child.id}`}  className="form-btn" method="delete" as="button">
+                      <ion-icon name="trash-bin-outline"></ion-icon>
+                    </Link>
+                  }
                 </div>
               </td>
               <td><span className="tag webdev">{child.category}</span></td>
