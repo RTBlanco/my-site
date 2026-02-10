@@ -3,28 +3,10 @@ class ApplicationController < ActionController::Base
   include Devise::Controllers::Helpers
   allow_browser versions: :modern
 
-  def index
-    render inertia: "containers/About"
-  end
-
-  def about
-    render inertia: "containers/About"
-  end
-
-  def resume
-    render inertia: "containers/Resume"
-  end
-
-  def portfolio
-    render inertia: "containers/Porfolio"
-  end
-
   def contact
     contact = contact_params
 
     ContactMailer.contact_email(contact[:email], contact[:message], contact[:full_name]).deliver_later
-
-    # asdfsd
     redirect_to "/Contact"
   end
 
