@@ -1,12 +1,14 @@
+import resumeFile from "./Resume.pdf"
+
 const Resume = ({ active }) => {
   return (
     <article className="resume active" data-page="resume">
 
       <header className="resume-header">
         <h2 className="h2 article-title">Resume</h2>
-        <button className="form-btn">
+        <a href={resumeFile} download="resume" className="form-btn">
           <ion-icon name="download-outline"></ion-icon>
-        </button>
+        </a>
       </header>
 
       <section className="timeline">
