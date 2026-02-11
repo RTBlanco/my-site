@@ -40,7 +40,6 @@ const Blogs = () => {
     ))
   }
 
-  console.log(blogs)
   return (
     <article className="blog active" data-page="blog">
 

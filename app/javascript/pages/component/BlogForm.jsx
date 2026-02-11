@@ -12,7 +12,7 @@ const BlogForm = ({modalRef, blog, toggleModal}) => {
     })
     toggleModal(modalRef)
   }
-  console.log(newBlog)
+
   return (
     <section className="blog-form">
 

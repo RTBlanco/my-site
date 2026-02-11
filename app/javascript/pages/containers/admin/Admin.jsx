@@ -13,7 +13,6 @@ export default function Admin() {
   const projectModalRef = useRef(null)
 
   const toggleModal = (modalRef, newItem = true) => {
-    console.log(modalRef)
     if (newItem) {
       setEditBlog({})
     }
@@ -23,10 +22,8 @@ export default function Admin() {
 
   const populateModal = (blog) => {
     if (blog) {
-      console.log('testing ')
       setEditBlog(blog)
     } else {
-      console.log('testing 2')
       setEditBlog({})
     }
 
