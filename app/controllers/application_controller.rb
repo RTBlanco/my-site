@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   include Devise::Controllers::Helpers
   allow_browser versions: :modern
 
+  def index
+    render inertia: "containers/About"
+  end
+
   def contact
     contact = contact_params
 
