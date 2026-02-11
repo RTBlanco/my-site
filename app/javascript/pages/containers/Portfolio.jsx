@@ -11,13 +11,17 @@ const Portfolio = () => {
   const [selOption, setSelOption] = useState("All")
 
 
-  const renderFilerList = () => (
+  const renderFilerList = (className="filter-item") => (
     listOptions.map((filter, index) => (
-      <li key={index} className="filter-item">
+      <li key={index} className={className}>
         <button onClick={() => setSelOption(filter)} className={filter === selOption ?`active` : ""} data-filter-btn>{filter}</button>
       </li>
     ))
   )
+
+  const handleListButton = (e) => {
+    e.target.classList.toggle('active')
+  }
 
   const renderProjects = () => {
     const filteredProjects =  projects.filter(item => selOption.toLowerCase() === "all" || item.category === selOption.toLowerCase())
@@ -60,7 +64,7 @@ const Portfolio = () => {
 
         <div className="filter-select-box">
 
-          <button className="filter-select" data-select>
+          <button className="filter-select" onClick={handleListButton} data-select>
 
             <div className="select-value" data-selecct-value>Select category</div>
 
@@ -69,7 +73,13 @@ const Portfolio = () => {
             </div>
 
           </button>
+          <ul className="select-list">
+
+            {renderFilerList("select-item")}
+
+          </ul>
         </div>
+
 
         <ul className="project-list">
           {renderProjects()}
