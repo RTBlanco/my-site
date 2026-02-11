@@ -2,8 +2,11 @@ const Resume = ({ active }) => {
   return (
     <article className="resume active" data-page="resume">
 
-      <header>
+      <header className="resume-header">
         <h2 className="h2 article-title">Resume</h2>
+        <button className="form-btn">
+          <ion-icon name="download-outline"></ion-icon>
+        </button>
       </header>
 
       <section className="timeline">
