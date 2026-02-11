@@ -115,20 +115,20 @@ const SideMenu = () => {
         <ul className="social-list">
 
           <li className="social-item">
-            <a href="#" className="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
+            <a href="https://www.linkedin.com/in/ronnytoribio/" className="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
 
           <li className="social-item">
-            <a href="#" className="social-link">
+            <a href="https://x.com/R_T_Blanco" className="social-link">
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
 
           <li className="social-item">
-            <a href="#" className="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
+            <a href="https://github.com/rtblanco" className="social-link">
+              <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
 
