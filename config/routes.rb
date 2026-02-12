@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     get "(*path)", to: redirect { |params, req| "#{req.protocol}localhost:#{req.port}/#{params[:path]}" }
   end
   # root 'inertia_example#index'
-  get 'inertia-example', to: 'inertia_example#index'
+  # get "inertia-example", to: "inertia_example#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -32,15 +32,11 @@ Rails.application.routes.draw do
   # root "posts#index"
   inertia "About" => "containers/About"
   inertia "Resume" => "containers/Resume"
-  # inertia "Portfolio" => "containers/Portfolio"
-  # inertia "Blogs" => "containers/blogs/Blogs"
-  # inertia "Blog" => "containers/blogs/Blog"
   inertia "Contact" => "containers/Contact"
 
   post "contact" => "application#contact"
 
   scope :admin do
-    # inertia "dashboard" => "containers/admin/Admin"
     get "/dashboard" => "admin#dashboard"
     get "login" => "admin#login"
     post "login" => "admin#sign_admin_in"
