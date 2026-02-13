@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
   def add_all
     ProjectUpdater.populate_lit_git_projects
 
-    redirect_to dashboard
+    redirect_to dashboard_path
   end
 
   private
