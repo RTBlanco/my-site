@@ -106,14 +106,14 @@ This provides a consistent environment for development.
 
 ## 🎨 Design Inspiration & Credits
 
-This project’s visual foundation was originally inspired by work from @codewithsadee.
+This project’s visual foundation was originally inspired by work from [@codewithsadee](https://github.com/codewithsadee).
 The initial layout and design ideas came from their open-source project, which helped me kickstart the look and feel of this site.
 
 While the original source began as a static HTML/CSS implementation, this repository represents a complete rebuild. The application has been re-architected into a full Ruby on Rails + React stack, with new structure, features, and functionality tailored to my own workflow and goals.
 
 I’m incredibly grateful for the inspiration and wanted to give proper credit to the original creator:
 
-Original design & inspiration: @codewithsadee
+Original design & inspiration: [@codewithsadee](https://github.com/codewithsadee)
 
 Original source: [vcard-personal-portfolio](https://github.com/codewithsadee/vcard-personal-portfolio)
 
