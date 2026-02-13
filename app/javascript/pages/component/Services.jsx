@@ -18,12 +18,12 @@ const Services = () => {
     {
       title: "Hardware Prototyping",
       image: IconDev,
-      text: "prototyping of embedded hardware design to bring ideas to life."
+      text: "Prototyping of embedded hardware design to bring ideas to life."
     },
     {
       title: "Photography",
       image: IconPhoto,
-      text: "I make high-quality photos of any category at a professional level."
+      text: "I take high-quality photos of any category at a professional level."
     }
   ];
 
