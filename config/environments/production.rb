@@ -58,7 +58,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "rtblanco.com" }
+  config.action_mailer.default_url_options = { host: "rtblanco.onrender.com" }
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
   config.action_mailer.delivery_method = :smtp
@@ -67,7 +67,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: "rtblanco.com",
+    domain: "rtblanco.onrender.com",
     user_name: Rails.application.credentials.dig(:gmail, :user_name),
     password: Rails.application.credentials.dig(:gmail, :password),
     authentication: "plain",
