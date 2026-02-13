@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def contact
     contact = contact_params
 
-    ContactMailer.contact_email(contact[:email], contact[:message], contact[:full_name]).deliver_later
+    ContactMailer.contact_email(contact[:email], contact[:message], contact[:full_name]).deliver_now
     redirect_to "/Contact"
   end
 
