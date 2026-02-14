@@ -1,44 +1,44 @@
-import Logo from "../../images/logo-1-color.png"
-import Logo2 from "../../images/logo-2-color.png"
-import Logo3 from "../../images/logo-3-color.png"
-import Logo4 from "../../images/logo-4-color.png"
-import Logo5 from "../../images/logo-5-color.png"
-import Logo6 from "../../images/logo-6-color.png"
+// import Logo from "../../images/logo-1-color.png"
+// import Logo2 from "../../images/logo-2-color.png"
+// import Logo3 from "../../images/logo-3-color.png"
+// import Logo4 from "../../images/logo-4-color.png"
+// import Logo5 from "../../images/logo-5-color.png"
+// import Logo6 from "../../images/logo-6-color.png"
 
 const Clients = () => {
 
-  const clientsItems = [
-    {
-      logo: Logo,
-      alt: "Client logo",
-      link: "#"
-    },
-    {
-      logo: Logo2,
-      alt: "Client logo",
-      link: "#"
-    },
-    {
-      logo: Logo3,
-      alt: "Client logo",
-      link: "#"
-    },
-    {
-      logo: Logo4,
-      alt: "Client logo",
-      link: "#"
-    },
-    {
-      logo: Logo5,
-      alt: "Client logo",
-      link: "#"
-    },
-    {
-      logo: Logo6,
-      alt: "Client logo",
-      link: "#"
-    }
-  ];
+  // const clientsItems = [
+  //   {
+  //     logo: Logo,
+  //     alt: "Client logo",
+  //     link: "#"
+  //   },
+  //   {
+  //     logo: Logo2,
+  //     alt: "Client logo",
+  //     link: "#"
+  //   },
+  //   {
+  //     logo: Logo3,
+  //     alt: "Client logo",
+  //     link: "#"
+  //   },
+  //   {
+  //     logo: Logo4,
+  //     alt: "Client logo",
+  //     link: "#"
+  //   },
+  //   {
+  //     logo: Logo5,
+  //     alt: "Client logo",
+  //     link: "#"
+  //   },
+  //   {
+  //     logo: Logo6,
+  //     alt: "Client logo",
+  //     link: "#"
+  //   }
+  // ];
 
 
   const renderClients = () => (
