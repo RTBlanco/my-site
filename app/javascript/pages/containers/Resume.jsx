@@ -1,4 +1,4 @@
-import resumeFile from "./Resume.pdf"
+import resumeFile from "./Ronny Toribio Resume.pdf"
 
 const Resume = ({ active }) => {
   return (
