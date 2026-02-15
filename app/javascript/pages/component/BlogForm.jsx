@@ -38,7 +38,8 @@ const BlogForm = ({modalRef, blog, toggleModal}) => {
         </div>
 
         <textarea defaultValue={blog.content} name="content" className="form-input" placeholder="Content"  data-form-input></textarea>
-
+        {/* make this rich text editor  */}
+        
         <div className="form-btns">
           {newBlog ||
             <button onClick={(e) => handleDelete(e, blog.id)} className="form-btn" type="submit" data-form-btn>
