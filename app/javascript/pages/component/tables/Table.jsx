@@ -1,6 +1,39 @@
-import { Link } from "@inertiajs/react"
+import { Link, router } from "@inertiajs/react"
+import { useState } from "react";
 
 const Table = ({ modalRef, children, name, toggleModal, populateModal, isProject}) => {
+
+  const [items, setItems] = useState(children)
+  const [dragIndex, setDragIndex] = useState(null);
+
+  const handleDragStart = (index) => {
+    setDragIndex(index)
+  }
+
+  const handleDragDrop = (dropIndex) => {
+    
+   if (dragIndex === null) return;
+
+    const updated = [...items];
+    const [moved] = updated.splice(dragIndex, 1);
+    updated.splice(dropIndex, 0, moved);
+
+    const order = updated.map(item => item.id)
+    router.patch("/admin", {admin: {projects_order: order}}, {
+     preserveState: true,
+     preserveScroll: true,
+     onSuccess: (page) => {
+       setItems(updated);
+       setDragIndex(null);
+     }
+    })
+  }
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  }
+
+
 
   return (
     <div className="table-wrapper">
@@ -19,8 +52,14 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, isProject
           </tr>
         </thead>
         <tbody>
-          {children.map(child => (
-            <tr key={child.id} onClick={() => populateModal(child)}>
+          {items.map((child, index) => (
+            <tr id={isProject ? `project-${child.id}` : undefined} 
+              key={child.id} onClick={() => populateModal(child)} 
+              draggable={isProject} 
+              onDragStart={() => handleDragStart(index)} 
+              onDrop={() => handleDragDrop(index)}
+              onDragOver={handleDragOver}
+              >
               <td>
                 <div className="project-cell">
                   <div className="project-image" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}></div>
