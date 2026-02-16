@@ -86,8 +86,8 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: my_site_production
-    username: my_site
+    database: rtblanco_production_database
+    username: rtblanco_production_database_user
     password: <%= ENV["MY_SITE_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
