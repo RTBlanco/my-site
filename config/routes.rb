@@ -41,6 +41,7 @@ Rails.application.routes.draw do
     get "login" => "admin#login"
     post "login" => "admin#sign_admin_in"
     post "logout" => "admin#logout"
+    patch "/" => "admin#update"
   end
 
   root "application#index"
