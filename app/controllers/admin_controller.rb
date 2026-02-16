@@ -2,7 +2,9 @@ class AdminController < ApplicationController
   before_action :authenticate_admin, only: [ :dashboard, :update ]
 
   def dashboard
-    projects = Project.find(current_admin.projects_order).map do |project|
+    projectIds = current_admin.projects_order
+
+    projects = Project.where(id: projectIds).in_order_of(:id, projectIds).map do |project|
       ProjectSerializer.new(project).as_hash
     end
 
