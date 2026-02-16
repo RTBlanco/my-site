@@ -1,8 +1,8 @@
 class AdminController < ApplicationController
-  before_action :authenticate_admin, only: [ :dashboard ]
+  before_action :authenticate_admin, only: [ :dashboard, :update ]
 
   def dashboard
-    projects = Project.all.map do |project|
+    projects = Project.find(current_admin.projects_order).map do |project|
       ProjectSerializer.new(project).as_hash
     end
 
@@ -34,5 +34,17 @@ class AdminController < ApplicationController
     return redirect_to dashboard_path unless !admin_signed_in?
 
     render inertia: "containers/admin/AdminLogin"
+  end
+
+  def update
+    current_admin.update(admin_params)
+
+    redirect_to dashboard_path
+  end
+
+  private
+
+  def admin_params
+    params.require(:admin).permit(projects_order: [])
   end
 end
