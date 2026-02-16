@@ -75,7 +75,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_16_035857) do
     t.string "image_url"
     t.string "category"
     t.string "title"
-    t.integer "order_number"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
