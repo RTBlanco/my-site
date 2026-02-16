@@ -28,7 +28,7 @@ module ProjectUpdater
 
   def add_github_project(repo_name)
     repo = Octokit.repo(repo_name)
-    image = Octokit.contents(repo_name, path: "github_test.png")
+    image = Octokit.contents(repo_name, path: "repo-image.png")
     Project.create do |p|
       p.title = repo.name
       p.description = repo.description
