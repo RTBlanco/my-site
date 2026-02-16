@@ -54,7 +54,8 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, isProject
         <tbody>
           {items.map((child, index) => (
             <tr id={isProject ? `project-${child.id}` : undefined} 
-              key={child.id} onClick={() => populateModal(child)} 
+              key={child.id} 
+              onClick={() => isProject? undefined : populateModal(child)} 
               draggable={isProject} 
               onDragStart={() => handleDragStart(index)} 
               onDrop={() => handleDragDrop(index)}
