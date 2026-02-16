@@ -10,7 +10,9 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    projects = Project.find(current_admin.projects_order).map do |project|
+    projectIds = Admin.first.projects_order
+
+    projects = Project.where(id: projectIds).in_order_of(:id, projectIds).map do |project|
       ProjectSerializer.new(project).as_hash
     end
     render inertia: "containers/Portfolio", props: { projects: }
