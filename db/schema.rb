@@ -54,7 +54,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_16_035857) do
     t.string "title"
     t.datetime "birthday"
     t.string "location"
-    t.string "projects_order", default: [], array: true
+    t.integer "projects_order", default: [], array: true
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
