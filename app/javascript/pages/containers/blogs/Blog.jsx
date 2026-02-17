@@ -32,9 +32,9 @@ const Blog = () => {
 
               <h3 className="h3 blog-item-title">{blog.title}</h3>
 
-              <p className="blog-text">
-                {blog.content}
-              </p>
+              <div className="blog-text" dangerouslySetInnerHTML={{__html: blog.content}}>
+                {/* {blog.content} */}
+              </div>
 
             </div>
           
