@@ -4,6 +4,7 @@ import { usePage, Link } from "@inertiajs/react";
 import { useRef, useState } from "react";
 import BlogForm from "../../component/BlogForm";
 import ProjectForm from "../../component/ProjectForm";
+import QrCodeForm from "../../component/QrCodeForm";
 
 export default function Admin() {
 
@@ -11,6 +12,7 @@ export default function Admin() {
   const [editBlog, setEditBlog] = useState({})
   const blogModalRef = useRef(null)
   const projectModalRef = useRef(null)
+  const qrCodeRef = useRef(null)
 
   const toggleModal = (modalRef, newItem = true) => {
     if (newItem) {
@@ -47,10 +49,14 @@ export default function Admin() {
 
       <section className="dashboard">
 
-        <Table name={"projects"} modalRef={projectModalRef} toggleModal={toggleModal} isProject={true}>
+        <Table name={"projects"} modalRef={projectModalRef} toggleModal={toggleModal} tableType={"project"}>
           {projects}
         </Table>
-        <Table name={"Blogs"} modalRef={blogModalRef} toggleModal={toggleModal} isProject={false} populateModal={populateModal}>
+        <Table name={"Blogs"} modalRef={blogModalRef} toggleModal={toggleModal} tableType={"blogs"} populateModal={populateModal}>
+          {blogs}
+        </Table>
+
+        <Table name={"QR Codes"} modalRef={qrCodeRef} toggleModal={toggleModal} tableType={"qrCodes"} populateModal={populateModal}>
           {blogs}
         </Table>
       </section>
@@ -61,6 +67,10 @@ export default function Admin() {
 
       <Modal modalRef={projectModalRef} toggleModal={toggleModal} >
         <ProjectForm modalRef={projectModalRef} toggleModal={toggleModal}/>
+      </Modal>
+
+      <Modal modalRef={qrCodeRef} toggleModal={toggleModal} >
+        <QrCodeForm modalRef={qrCodeRef} toggleModal={toggleModal} />
       </Modal>
     </article>
   )
