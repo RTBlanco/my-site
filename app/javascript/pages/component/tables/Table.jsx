@@ -52,6 +52,8 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
                 <ion-icon name="add-circle-outline"></ion-icon>
               </button>
             </th>
+            {/* have it take in a an object that contains all the data 
+            exampl like link pathname and how many hits  */}
             <th>Category</th>
             <th>Year</th>
           </tr>
