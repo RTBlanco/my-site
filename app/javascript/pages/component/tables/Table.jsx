@@ -1,6 +1,7 @@
 import { Link, router } from "@inertiajs/react"
 import { useState } from "react";
 
+// redo the table there is to much happening 
 const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType, headers}) => {
 
   const [items, setItems] = useState(children)
