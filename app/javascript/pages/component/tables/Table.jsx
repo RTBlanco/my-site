@@ -38,7 +38,7 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
     e.preventDefault();
   }
 
-
+  // console.log(Object.keys(items[0]))
 
   return (
     <div className="table-wrapper">
@@ -52,10 +52,18 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
                 <ion-icon name="add-circle-outline"></ion-icon>
               </button>
             </th>
-            {/* have it take in a an object that contains all the data 
-            exampl like link pathname and how many hits  */}
-            <th>Category</th>
-            <th>Year</th>
+           
+            {tableType === 'qrCodes' ? 
+              Object.keys(items[0]).map(key => 
+                <th key={key}>{key}</th>
+              )
+              : 
+              <>
+                <th>Category</th>
+                <th>Year</th>
+              </>
+            } 
+
           </tr>
         </thead>
         <tbody>
@@ -83,7 +91,7 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
                 </div>
               </td>
               <td><span className="tag webdev">{child.category}</span></td>
-              <td>{child.dateLabel.split(', ')[1]}</td>
+              <td>{tableType == 'qrCodes' || child.dateLabel.split(', ')[1]}</td>
             </tr>
           ))}
         </tbody>
