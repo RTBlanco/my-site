@@ -1,7 +1,7 @@
 import { Link, router } from "@inertiajs/react"
 import { useState } from "react";
 
-const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType}) => {
+const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType, headers}) => {
 
   const [items, setItems] = useState(children)
   const [dragIndex, setDragIndex] = useState(null);
@@ -14,6 +14,10 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
   const isProject = () => {
     return tableType === "project"
   }
+
+  const isQrCode = () => (
+    tableType === "qrCodes"
+  )
 
   const handleDragDrop = (dropIndex) => {
     
@@ -53,45 +57,70 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
               </button>
             </th>
            
-            {tableType === 'qrCodes' ? 
-              Object.keys(items[0]).map(key => 
+            {
+              headers.map(key => 
                 <th key={key}>{key}</th>
               )
-              : 
-              <>
-                <th>Category</th>
-                <th>Year</th>
-              </>
-            } 
+            }  
 
           </tr>
         </thead>
         <tbody>
           {items.map((child, index) => (
-            <tr id={isProject() ? `project-${child.id}` : undefined} 
-              key={child.id} 
-              onClick={() => isProject()? undefined : populateModal(child)} 
-              draggable={isProject()} 
-              onDragStart={() => handleDragStart(index)} 
+            <tr
+              id={isProject() ? `project-${child.id}` : undefined}
+              key={child.id}
+              onClick={() => (isProject() ? undefined : populateModal(child))}
+              draggable={isProject()}
+              onDragStart={() => handleDragStart(index)}
               onDrop={() => handleDragDrop(index)}
               onDragOver={handleDragOver}
-              >
-              <td>
-                <div className="project-cell">
-                  {/* if QR Code just show image */}
-                  <div className="project-image" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}></div>
-                  <div className="project-info">
-                    <h3>{child.title}</h3>
-                  </div>
-                  {isProject() && 
-                    <Link href={`/Portfolio/${child.id}`}  className="form-btn" method="delete" as="button">
-                      <ion-icon name="trash-bin-outline"></ion-icon>
-                    </Link>
-                  }
-                </div>
-              </td>
-              <td><span className="tag webdev">{child.category}</span></td>
-              <td>{tableType == 'qrCodes' || child.dateLabel.split(', ')[1]}</td>
+            >
+              {isQrCode() ? (
+                <>
+                  <td>
+                    <div className="project-cell">
+                      {/* if QR Code just show image */}
+                      <div className="project-image" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}></div>
+                      
+                      <Link href={`/qrcode/${child.id}`} className="form-btn" method="delete" as="button">
+                        <ion-icon name="trash-bin-outline"></ion-icon>
+                      </Link>
+                      
+                    </div>
+                  </td>
+                  <td>
+                    <div className="project-info">
+                      <h3>{child.path}</h3>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="project-info">
+                      <h3>{child.hits}</h3>
+                    </div>
+                  </td>
+                </>
+              ) : (
+                <>
+                  <td>
+                    <div className="project-cell">
+                      <div className="project-image" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}></div>
+                      <div className="project-info">
+                        <h3>{child.title}</h3>
+                      </div>
+                      {isProject() && (
+                        <Link href={`/Portfolio/${child.id}`} className="form-btn" method="delete" as="button">
+                          <ion-icon name="trash-bin-outline"></ion-icon>
+                        </Link>
+                      )}
+                    </div>
+                  </td>
+                  <td>
+                    <span className="tag webdev">{child.category}</span>
+                  </td>
+                  {tableType === 'qrCodes' ? null : <td>{child.dateLabel.split(', ')[1]}</td>}
+                </>
+              )}
             </tr>
           ))}
         </tbody>

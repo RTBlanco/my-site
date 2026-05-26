@@ -6,6 +6,8 @@ import BlogForm from "../../component/BlogForm";
 import ProjectForm from "../../component/ProjectForm";
 import QrCodeForm from "../../component/QrCodeForm";
 
+
+
 export default function Admin() {
 
   const { blogs, projects } = usePage().props
@@ -40,6 +42,7 @@ export default function Admin() {
     toggleModal(blogModalRef, false)
   }
 
+
   return (
     <article className="admin active" data-page="admin">
 
@@ -57,16 +60,40 @@ export default function Admin() {
 
       <section className="dashboard">
 
-        <Table name={"projects"} modalRef={projectModalRef} toggleModal={toggleModal} tableType={"project"}>
+        <Table 
+          name={"projects"} 
+          modalRef={projectModalRef} 
+          toggleModal={toggleModal} 
+          tableType={"project"} 
+          headers={['Catergory', 'Year']}
+        >
+
           {projects}
         </Table>
-        <Table name={"Blogs"} modalRef={blogModalRef} toggleModal={toggleModal} tableType={"blogs"} populateModal={populateModal}>
+
+        <Table 
+          name={"Blogs"}
+          modalRef={blogModalRef}
+          toggleModal={toggleModal} 
+          tableType={"blogs"} 
+          populateModal={populateModal} 
+          headers={['Catergory', 'Year']}
+        >
+
           {blogs}
         </Table>
 
-        <Table name={"QR Codes"} modalRef={qrCodeRef} toggleModal={toggleModal} tableType={"qrCodes"} populateModal={populateModal}>
+        <Table 
+          name={"QR Codes"} 
+          modalRef={qrCodeRef} 
+          toggleModal={toggleModal} 
+          tableType={"qrCodes"} 
+          populateModal={populateModal} 
+          headers={Object.keys(qrCodes[0]).filter(item => item !== "id")}
+        >
+          
           {qrCodes}
-          {/* {blogs} */}
+          
         </Table>
       </section>
 
