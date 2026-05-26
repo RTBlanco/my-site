@@ -83,18 +83,25 @@ export default function Admin() {
           {blogs}
         </Table>
 
-        <Table 
-          name={"QR Codes"} 
-          modalRef={qrCodeRef} 
-          toggleModal={toggleModal} 
-          tableType={"qrCodes"} 
-          populateModal={populateModal} 
-          headers={Object.keys(qrCodes[0]).filter(item => item !== "id")}
-        >
-          
-          {qrCodes}
-          
-        </Table>
+        {qrCodes.length == 0 || (
+          <>
+            <Table 
+              name={"QR Codes"} 
+              modalRef={qrCodeRef} 
+              toggleModal={toggleModal} 
+              tableType={"qrCodes"} 
+              populateModal={populateModal} 
+              headers={Object.keys(qrCodes[0]).filter(item => item !== "id")}
+            >
+              
+              {qrCodes}
+              
+            </Table>
+            <Modal modalRef={qrCodeRef} toggleModal={toggleModal} >
+              <QrCodeForm modalRef={qrCodeRef} toggleModal={toggleModal} />
+            </Modal>
+          </>
+        )}
       </section>
 
       <Modal modalRef={blogModalRef} toggleModal={toggleModal} populateModal={populateModal}>
@@ -105,9 +112,6 @@ export default function Admin() {
         <ProjectForm modalRef={projectModalRef} toggleModal={toggleModal}/>
       </Modal>
 
-      <Modal modalRef={qrCodeRef} toggleModal={toggleModal} >
-        <QrCodeForm modalRef={qrCodeRef} toggleModal={toggleModal} />
-      </Modal>
     </article>
   )
 }
