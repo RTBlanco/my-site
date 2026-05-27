@@ -92,6 +92,11 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
                   </td>
                   <td>
                     <div className="project-info">
+                      <h3>{child.desciption}</h3>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="project-info">
                       <h3>{child.path}</h3>
                     </div>
                   </td>

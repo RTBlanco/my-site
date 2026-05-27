@@ -14,6 +14,7 @@ export default function Admin() {
   const qrCodes = [
     {
       id: 1,
+      desciption: "Mel's job",
       path: '/1232',
       hits: 1
     }
