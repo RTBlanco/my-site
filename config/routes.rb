@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :qr_codes
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
