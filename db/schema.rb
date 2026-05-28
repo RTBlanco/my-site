@@ -78,8 +78,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_05_27_180014) do
   end
 
   create_table "qr_codes", force: :cascade do |t|
-    t.string "path"
-    t.integer "hits"
+    t.integer "hits", default: 0
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
