@@ -45,7 +45,5 @@ Rails.application.routes.draw do
     patch "/" => "admin#update"
   end
 
-  resources :qr_codes
-
   root "application#index"
 end
