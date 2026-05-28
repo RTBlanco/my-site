@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :qr_codes
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
@@ -43,6 +44,8 @@ Rails.application.routes.draw do
     post "logout" => "admin#logout"
     patch "/" => "admin#update"
   end
+
+  resources :qr_codes
 
   root "application#index"
 end
