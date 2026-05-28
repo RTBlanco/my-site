@@ -12,11 +12,11 @@ class AdminController < ApplicationController
       BlogSerializer.new(blog).as_hash
     end
 
-    qr_codes = QrCode.all.map do |qr_code|
+    qrCodes = QrCode.all.map do |qr_code|
       QrSerializer.new(qr_code).as_hash
     end
 
-    render inertia: "containers/admin/Admin", props: { blogs:, projects:, qr_codes: }
+    render inertia: "containers/admin/Admin", props: { blogs:, projects:, qrCodes: }
   end
 
   def sign_admin_in
