@@ -82,8 +82,7 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
                   <td>
                     <div className="project-cell">
                       {/* if QR Code just show image */}
-                      <div className="project-image" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}></div>
-                      
+                      <img className="project-image" src={`${child.code}`} alt="" />
                       <Link href={`/qrcode/${child.id}`} className="form-btn" method="delete" as="button">
                         <ion-icon name="trash-bin-outline"></ion-icon>
                       </Link>
@@ -92,17 +91,17 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
                   </td>
                   <td>
                     <div className="project-info">
-                      <h3>{child.desciption}</h3>
+                      <h3>{child.hits}</h3>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="project-info">
+                      <h3>{child.description}</h3>
                     </div>
                   </td>
                   <td>
                     <div className="project-info">
                       <h3>{child.path}</h3>
-                    </div>
-                  </td>
-                  <td>
-                    <div className="project-info">
-                      <h3>{child.hits}</h3>
                     </div>
                   </td>
                 </>
