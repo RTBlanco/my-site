@@ -26,16 +26,6 @@ class QrCodesController < ApplicationController
     end
   end
 
-  # download the QR code image at higher scale
-  def download
-    qr_code = QrCode.find(params[:id])
-    if qr_code && qr_code.code.attached?
-      send_data qr_code.code.download, filename: "RTBlanco.png", type: "image/png"
-    else
-      redirect_to dashboard_path, alert: "QR code not found"
-    end
-  end
-
   private
 
   def set_qrcode
