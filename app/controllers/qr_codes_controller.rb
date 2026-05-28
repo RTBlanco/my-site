@@ -10,9 +10,19 @@ class QrCodesController < ApplicationController
     redirect_to root_path
   end
 
-  def destroy; end
+  def destroy
+    @qr_code.destroy
+    head :no_content
+  end
 
-  def create; end
+  def create
+    @qr_code = QrCode.new(qr_code_params)
+    if @qr_code.save
+      render json: @qr_code, status: :created
+    else
+      render json: @qr_code.errors, status: :unprocessable_entity
+    end
+  end
 
   private
 
