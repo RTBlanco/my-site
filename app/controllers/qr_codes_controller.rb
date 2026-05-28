@@ -5,9 +5,11 @@ class QrCodesController < ApplicationController
     qr_code = QrCode.find(params[:id])
 
     if qr_code
-      qr_code.hits += 1
+      qr_code.increment!(:hits)
+      redirect_to root_path
+    else
+      redirect_to root_path, alert: "QR code not found"
     end
-    redirect_to root_path
   end
 
   def destroy
@@ -18,9 +20,19 @@ class QrCodesController < ApplicationController
   def create
     @qr_code = QrCode.new(qr_code_params)
     if @qr_code.save
-      render json: @qr_code, status: :created
+      redirect_to dashboard_path
     else
-      render json: @qr_code.errors, status: :unprocessable_entity
+      redirect_to dashboard_path, alert: "Failed to create QR code"
+    end
+  end
+
+  # download the QR code image at higher scale
+  def download
+    qr_code = QrCode.find(params[:id])
+    if qr_code && qr_code.code.attached?
+      send_data qr_code.code.download, filename: "RTBlanco.png", type: "image/png"
+    else
+      redirect_to dashboard_path, alert: "QR code not found"
     end
   end
 
@@ -31,6 +43,6 @@ class QrCodesController < ApplicationController
   end
 
   def qr_code_params
-    params.require(:qr_code).permit(:hits, :description, :path, :code)
+    params.require(:qr_code).permit(:hits, :description, :code)
   end
 end
