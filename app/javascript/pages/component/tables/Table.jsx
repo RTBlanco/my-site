@@ -7,10 +7,21 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
   const [items, setItems] = useState(children)
   const [dragIndex, setDragIndex] = useState(null);
 
-  const handleOnClick = (child) => {
 
+  const handleOnClick = (child) => {
     if (isQrCode()) {
-      
+      // router.get(`/qr_codes/${child.id}/download`)
+
+      const url = child.code;
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'filename.pdf');
+      document.body.appendChild(link);
+      link.click();
+
+      link.parentNode.removeChild(link);
+      window.URL.revokeObjectURL(url);
+
     } else if (!isProject() && !isQrCode) {
       populateModal(child)
     } 
@@ -52,7 +63,6 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
     e.preventDefault();
   }
 
-  // console.log(Object.keys(items[0]))
 
   return (
     <div className="table-wrapper">
@@ -80,7 +90,7 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
             <tr
               id={isProject() ? `project-${child.id}` : undefined}
               key={child.id}
-              onClick={() => (isProject() ? undefined : populateModal(child))}
+              onClick={() => handleOnClick(child)}
               draggable={isProject()}
               onDragStart={() => handleDragStart(index)}
               onDrop={() => handleDragDrop(index)}
@@ -90,7 +100,6 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
                 <>
                   <td>
                     <div className="project-cell">
-                      {/* if QR Code just show image */}
                       <img className="project-image" src={`${child.code}`} alt="" />
                       <Link href={`/qrcode/${child.id}`} className="form-btn" method="delete" as="button">
                         <ion-icon name="trash-bin-outline"></ion-icon>
