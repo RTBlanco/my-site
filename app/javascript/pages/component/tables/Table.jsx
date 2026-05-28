@@ -7,6 +7,15 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
   const [items, setItems] = useState(children)
   const [dragIndex, setDragIndex] = useState(null);
 
+  const handleOnClick = (child) => {
+
+    if (isQrCode()) {
+      
+    } else if (!isProject() && !isQrCode) {
+      populateModal(child)
+    } 
+  }
+
   const handleDragStart = (index) => {
     setDragIndex(index)
   }
