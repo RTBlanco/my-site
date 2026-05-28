@@ -12,6 +12,8 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
     if (isQrCode()) {
       // router.get(`/qr_codes/${child.id}/download`)
 
+      // toggleModal(modalRef)
+
       const url = child.code;
       const link = document.createElement('a');
       link.href = url;
@@ -101,9 +103,9 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
                   <td>
                     <div className="project-cell">
                       <img className="project-image" src={`${child.code}`} alt="" />
-                      <Link href={`/qrcode/${child.id}`} className="form-btn" method="delete" as="button">
+                      {/* <Link href={`/qrcode/${child.id}`} className="form-btn" method="delete" as="button">
                         <ion-icon name="trash-bin-outline"></ion-icon>
-                      </Link>
+                      </Link> */}
                       
                     </div>
                   </td>
