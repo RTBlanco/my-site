@@ -10,15 +10,7 @@ import QrCodeForm from "../../component/QrCodeForm";
 
 export default function Admin() {
 
-  const { blogs, projects } = usePage().props
-  const qrCodes = [
-    {
-      id: 1,
-      desciption: "Mel's job",
-      path: '/1232',
-      hits: 1
-    }
-  ]
+  const { blogs, projects, qrCodes } = usePage().props
   
   const [editBlog, setEditBlog] = useState({})
   const blogModalRef = useRef(null)
@@ -92,7 +84,7 @@ export default function Admin() {
               toggleModal={toggleModal} 
               tableType={"qrCodes"} 
               populateModal={populateModal} 
-              headers={Object.keys(qrCodes[0]).filter(item => item !== "id")}
+              headers={['hits', 'description', 'path']}
             >
               
               {qrCodes}
