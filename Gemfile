@@ -71,3 +71,5 @@ gem "vite_rails", "~> 3.0"
 gem "devise", "~> 4.9"
 
 gem "octokit", "~> 10.0"
+
+gem "rqrcode", "~> 3.2"
