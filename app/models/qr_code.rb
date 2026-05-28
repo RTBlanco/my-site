@@ -5,12 +5,18 @@ class QrCode < ApplicationRecord
   before_commit :create_qr_code, on: :create
 
 
+  def code_url
+    return nil unless code.attached?
+    Rails.application.routes.url_helpers.rails_blob_path(code, only_path: true)
+  end
+
   private
 
   def create_qr_code
-    host = Rails.application.config.action_controller.default_url_options[:host]
+    # get the host
+    host = Rails.application.config.hosts.first
 
-    qrcode = RQRCode::QRCode.new(qrcode_url(self, host:))
+    qrcode = RQRCode::QRCode.new(qr_codes_path(self, host:))
 
     png = qrcode.as_png(
       bit_depth: 1,
@@ -26,7 +32,7 @@ class QrCode < ApplicationRecord
     )
 
     self.code.attach(
-      io: StringIo.new(png.to_s),
+      io: StringIO.new(png.to_s),
       filename: "qr-code-#{id}.png",
       content_type: "image/png"
     )
