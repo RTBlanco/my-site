@@ -4,13 +4,18 @@ import { usePage, Link } from "@inertiajs/react";
 import { useRef, useState } from "react";
 import BlogForm from "../../component/BlogForm";
 import ProjectForm from "../../component/ProjectForm";
+import QrCodeForm from "../../component/QrCodeForm";
+
+
 
 export default function Admin() {
 
-  const { blogs, projects } = usePage().props
+  const { blogs, projects, qrCodes } = usePage().props
+  
   const [editBlog, setEditBlog] = useState({})
   const blogModalRef = useRef(null)
   const projectModalRef = useRef(null)
+  const qrCodeRef = useRef(null)
 
   const toggleModal = (modalRef, newItem = true) => {
     if (newItem) {
@@ -30,6 +35,7 @@ export default function Admin() {
     toggleModal(blogModalRef, false)
   }
 
+
   return (
     <article className="admin active" data-page="admin">
 
@@ -47,12 +53,48 @@ export default function Admin() {
 
       <section className="dashboard">
 
-        <Table name={"projects"} modalRef={projectModalRef} toggleModal={toggleModal} isProject={true}>
+        <Table 
+          name={"projects"} 
+          modalRef={projectModalRef} 
+          toggleModal={toggleModal} 
+          tableType={"project"} 
+          headers={['Catergory', 'Year']}
+        >
+
           {projects}
         </Table>
-        <Table name={"Blogs"} modalRef={blogModalRef} toggleModal={toggleModal} isProject={false} populateModal={populateModal}>
+
+        <Table 
+          name={"Blogs"}
+          modalRef={blogModalRef}
+          toggleModal={toggleModal} 
+          tableType={"blogs"} 
+          populateModal={populateModal} 
+          headers={['Catergory', 'Year']}
+        >
+
           {blogs}
         </Table>
+
+        {qrCodes.length == 0 || (
+          <>
+            <Table 
+              name={"QR Codes"} 
+              modalRef={qrCodeRef} 
+              toggleModal={toggleModal} 
+              tableType={"qrCodes"} 
+              populateModal={populateModal} 
+              headers={['hits', 'description', 'path']}
+            >
+              
+              {qrCodes}
+              
+            </Table>
+            <Modal modalRef={qrCodeRef} toggleModal={toggleModal} >
+              <QrCodeForm modalRef={qrCodeRef} toggleModal={toggleModal} />
+            </Modal>
+          </>
+        )}
       </section>
 
       <Modal modalRef={blogModalRef} toggleModal={toggleModal} populateModal={populateModal}>
@@ -62,6 +104,7 @@ export default function Admin() {
       <Modal modalRef={projectModalRef} toggleModal={toggleModal} >
         <ProjectForm modalRef={projectModalRef} toggleModal={toggleModal}/>
       </Modal>
+
     </article>
   )
 }
