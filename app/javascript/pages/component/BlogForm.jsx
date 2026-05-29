@@ -40,12 +40,12 @@ const BlogForm = ({modalRef, blog, toggleModal}) => {
 
         <div className="form-btns">
           {newBlog ||
-            <button type="button" onClick={(e) => handleDelete(e, blog.id)} className="form-btn" type="submit" data-form-btn>
+            <button type="button" onClick={(e) => handleDelete(e, blog.id)} className="form-btn" data-form-btn>
               <ion-icon name="trash-bin-outline"></ion-icon>
               <span>Delete</span>
             </button>
           }
-          <button type="submit" onClick={(e) => toggleModal(modalRef, newBlog)} className="form-btn" type="submit" data-form-btn>
+          <button type="submit" onClick={(e) => toggleModal(modalRef, newBlog)} className="form-btn" data-form-btn>
             <ion-icon name="enter-outline"></ion-icon>
             <span>Save</span>
           </button>
