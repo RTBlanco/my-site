@@ -1266,6 +1266,59 @@ textarea.form-input::-webkit-resizer { display: none; }
   height: 75%;
 }
 
+/* TipTap Editor */
+.tiptap-editor {
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.menu-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 10px 12px;
+  background: var(--onyx);
+  border-bottom: 1px solid var(--jet);
+}
+
+.menu-bar button {
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  transition: var(--transition-1);
+}
+
+.menu-bar button:hover {
+  color: var(--orange-yellow-crayola);
+  border-color: var(--orange-yellow-crayola);
+}
+
+.menu-bar button.is-active {
+  color: var(--smoky-black);
+  background: var(--orange-yellow-crayola);
+  border-color: var(--orange-yellow-crayola);
+}
+
+.tiptap-editor .ProseMirror {
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-400);
+  padding: 13px 20px;
+  min-height: 120px;
+  outline: none;
+}
+
+.tiptap-editor .ProseMirror p { margin-bottom: 8px; }
+
+.tiptap-editor:focus-within {
+  border-color: var(--orange-yellow-crayola);
+}
+
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/

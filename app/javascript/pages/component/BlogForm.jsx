@@ -1,23 +1,21 @@
 import { Form, useForm } from "@inertiajs/react";
+import TipTapEditor from "./TipTapEditor"
+import { useState } from "react";
 
 const BlogForm = ({modalRef, blog, toggleModal}) => {
-
   const {delete: destroy } = useForm({})
-  const newBlog =  Object.keys(blog).length === 0
+  const newBlog = Object.keys(blog).length === 0
+  const [content, setContent] = useState(blog.content || '')
 
   const handleDelete = (e, id) => {
     e.preventDefault()
-    destroy(`/Blogs/${id}`,{
-      preserveScroll: true
-    })
+    destroy(`/Blogs/${id}`, { preserveScroll: true })
     toggleModal(modalRef)
   }
 
   return (
     <section className="blog-form">
-
       <h3 className="h3 form-title">{newBlog ? "Create Blog" : `Edit ${blog.title}`}</h3>
-
       <Form 
         action={newBlog ? "/Blogs" : `/Blogs/${blog.id}`} 
         method={newBlog ? "post" : "put"} 
@@ -27,35 +25,32 @@ const BlogForm = ({modalRef, blog, toggleModal}) => {
           preserveState: false,
           preserveScroll: true
         }}
-        >
+      >
         <div className="input-wrapper">
           <input type="file" name="[blog]image" className="form-input" placeholder="image" accept="image/*" data-form-input />
         </div>
-
         <div className="input-wrapper">
-          <input defaultValue={blog.title} type="text" name="title" className="form-input" placeholder="Blog Title"  data-form-input />
+          <input defaultValue={blog.title} type="text" name="title" className="form-input" placeholder="Blog Title" data-form-input />
           <input defaultValue={blog.category} type="text" name="category" className="form-input" placeholder="Blog Category" data-form-input />
         </div>
 
-        <textarea defaultValue={blog.content} name="content" className="form-input" placeholder="Content"  data-form-input></textarea>
-        {/* make this rich text editor  */}
-        
+        {/* Tiptap rich text editor */}
+        <TipTapEditor value={content} onChange={setContent} />
+        <input type="hidden" name="content" value={content} />
+
         <div className="form-btns">
           {newBlog ||
-            <button onClick={(e) => handleDelete(e, blog.id)} className="form-btn" type="submit" data-form-btn>
+            <button type="button" onClick={(e) => handleDelete(e, blog.id)} className="form-btn" type="submit" data-form-btn>
               <ion-icon name="trash-bin-outline"></ion-icon>
               <span>Delete</span>
             </button>
           }
-
-          <button onClick={(e) => toggleModal(modalRef, newBlog)} className="form-btn" type="submit" data-form-btn>
+          <button type="submit" onClick={(e) => toggleModal(modalRef, newBlog)} className="form-btn" type="submit" data-form-btn>
             <ion-icon name="enter-outline"></ion-icon>
             <span>Save</span>
           </button>
         </div>
-
       </Form>
-
     </section>
   )
 }

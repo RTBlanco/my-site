@@ -1,5 +1,6 @@
 import defaultImage from "../../../../assets/images/default.png"
 import { usePage } from "@inertiajs/react"
+import DOMPurify from 'dompurify'
 
 const Blog = () => {
 
@@ -32,9 +33,7 @@ const Blog = () => {
 
               <h3 className="h3 blog-item-title">{blog.title}</h3>
 
-              <p className="blog-text">
-                {blog.content}
-              </p>
+              <p className="blog-text" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(blog.content) }} />
 
             </div>
           
