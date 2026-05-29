@@ -29,9 +29,9 @@ const Blogs = () => {
 
             <h3 className="h3 blog-item-title">{blog.title}</h3>
 
-            <p className="blog-text truncated-text">
+            {/* <p className="blog-text truncated-text">
               {blog.content}
-            </p>
+            </p> */}
 
           </div>
 

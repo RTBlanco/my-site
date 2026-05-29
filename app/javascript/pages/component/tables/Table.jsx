@@ -9,6 +9,8 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
 
 
   const handleOnClick = (child) => {
+    console.log("clicked")
+    console.log((!isProject() && !isQrCode()) )
     if (isQrCode()) {
       // router.get(`/qr_codes/${child.id}/download`)
 
@@ -24,7 +26,8 @@ const Table = ({ modalRef, children, name, toggleModal, populateModal, tableType
       link.parentNode.removeChild(link);
       window.URL.revokeObjectURL(url);
 
-    } else if (!isProject() && !isQrCode) {
+    } else if (!isQrCode() && !isProject()) {
+      
       populateModal(child)
     } 
   }
