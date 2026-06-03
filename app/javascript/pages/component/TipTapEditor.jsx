@@ -1,6 +1,7 @@
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import Image from '@tiptap/extension-image'
+import { useEffect } from 'react'
 
 const MenuBar = ({ editor }) => {
   if (!editor) return null
@@ -29,6 +30,12 @@ export default function TipTapEditor({ value, onChange }) {
       onChange(editor.getHTML())
     },
   })
+
+  useEffect(() => {
+    if (editor && value && editor.getHTML() !== value) {
+      editor.commands.setContent(value)
+    }
+  }, [editor, value])
 
   return (
     <div className="tiptap-editor">
