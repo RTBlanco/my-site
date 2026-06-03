@@ -1,11 +1,15 @@
 import { Form, useForm } from "@inertiajs/react";
 import TipTapEditor from "./TipTapEditor"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const BlogForm = ({modalRef, blog, toggleModal}) => {
   const {delete: destroy } = useForm({})
   const newBlog = Object.keys(blog).length === 0
   const [content, setContent] = useState(blog.content || '')
+
+  useEffect(() => {
+    setContent(blog.content || '')
+  }, [blog.id])
 
   const handleDelete = (e, id) => {
     e.preventDefault()
