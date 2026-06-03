@@ -1,5 +1,6 @@
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
+import Image from '@tiptap/extension-image'
 
 const MenuBar = ({ editor }) => {
   if (!editor) return null
@@ -22,7 +23,7 @@ const MenuBar = ({ editor }) => {
 
 export default function TipTapEditor({ value, onChange }) {
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [StarterKit, Image],
     content: value,
     onUpdate({ editor }) {
       onChange(editor.getHTML())
