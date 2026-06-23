@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import BlogForm from "../../component/BlogForm";
 import ProjectForm from "../../component/ProjectForm";
 import QrCodeForm from "../../component/QrCodeForm";
+import Resume from "../../component/Admin/Resume";
 
 
 
@@ -52,7 +53,7 @@ export default function Admin() {
       </header>
 
       <section className="dashboard">
-
+        <Resume />
         <Table 
           name={"projects"} 
           modalRef={projectModalRef} 

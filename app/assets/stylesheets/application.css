@@ -1319,6 +1319,27 @@ textarea.form-input::-webkit-resizer { display: none; }
   border-color: var(--orange-yellow-crayola);
 }
 
+#admin-resume {
+  border: 1px solid red;
+  padding: 30px;
+  height: 250px;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* min-height: 250px; */
+}
+
+#admin-resume .file {
+  border: 1px solid red;
+  width: 150px;
+}
+
+
+#admin-resume .resume-date {
+  border: 1px solid red;
+  width: 250px;
+}
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
@@ -1735,7 +1756,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     /* margin-left: auto; */
   }
-
   
 }
 
@@ -2125,5 +2145,9 @@ td {
 
   table {
     min-width: 800px;
+  }
+
+  #admin-resume {
+    height: 500px;
   }
 }
