@@ -20,6 +20,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def resume
+    render inertia: "containers/Resume", props: { fileURL: rails_blob_url(current_admin.resume, only_path: true) }
+  end
+
+
   private
 
   def contact_params
