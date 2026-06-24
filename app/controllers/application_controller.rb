@@ -20,6 +20,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def resume
+    if Admin.first.resume.blob
+      fileURL = rails_blob_url(Admin.first.resume, only_path: true)
+    else
+      fileURL = nil
+    end
+    render inertia: "containers/Resume", props: { fileURL: }
+  end
+
+
   private
 
   def contact_params

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :blogs, path: :Blogs
   devise_for :admins, skip: :all
 
+  get "Resume" => "application#resume"
+
 
   # Redirect to localhost from 127.0.0.1 to use same IP address with Vite server
   constraints(host: "127.0.0.1") do
@@ -33,7 +35,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   inertia "About" => "containers/About"
-  inertia "Resume" => "containers/Resume"
+  # inertia "Resume" => "containers/Resume"
   inertia "Contact" => "containers/Contact"
 
   post "contact" => "application#contact"
