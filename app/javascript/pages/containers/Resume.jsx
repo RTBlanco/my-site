@@ -10,7 +10,7 @@ const Resume = ({ active }) => {
 
       <header className="resume-header">
         <h2 className="h2 article-title">Resume</h2>
-        <a href={fileURL} download="resume" className="form-btn">
+        <a href={fileURL || resumeFile} download="resume" className="form-btn">
           <ion-icon name="download-outline"></ion-icon>
         </a>
       </header>
