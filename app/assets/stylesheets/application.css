@@ -1332,14 +1332,38 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 #admin-resume .file {
   border: 1px solid red;
-  width: 150px;
+  width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.file-name {
+  color: white;
+}
+
+.detail {
+  color: rgb(76, 76, 76);
 }
 
 
 #admin-resume .resume-date {
   border: 1px solid red;
-  width: 250px;
+  width: 350px;
 }
+
+#admin-resume-image {
+  width: 60px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #333;
+  margin-bottom: 20px;
+}
+
+
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
