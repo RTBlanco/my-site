@@ -1,59 +1,8 @@
 import { User, Clock, FileText, X, Upload } from 'lucide-react'
 import { useEffect, useState, useRef } from 'react';
+import { router } from '@inertiajs/react';
 
-//   return (
-//     <div className="resumeCard-wrapper">
-//       {/* <div className="file">
-//         <div id="admin-resume-image" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}></div>
-//         <p className="file-name">Ronny_Toribio_Resume.pdf</p>
-//         <p className="detail">Click to upload a new version</p>
-//       </div> */}
-
-
-//       <button className="resumeCard-preview">
-//         <div className="resumeCard-previewInner">
-//           <div className="resumeCard-iconSquare">
-//             <FileText size={28} color="#ffffff" strokeWidth={1.75} />
-//           </div>
-//           <div className="resumeCard-previewText">
-//             <p className="resumeCard-fileName">
-//               {"No resume uploaded"}
-//             </p>
-//             <p className="resumeCard-hint">Click to upload a new version</p>
-//           </div>
-//         </div>
-//         <div className="resumeCard-previewOverlay" />
-//       </button>
-
-
-//       <div className="resumeCard-info">
-//         <div className="resumeCard-infoRow">
-//           <div className="resumeCard-infoIcon">
-//             <User size={16} strokeWidth={1.75} />
-//           </div>
-//           <div>
-//             <p className="resumeCard-infoLabel">Name</p>
-//             <p className="resumeCard-infoValue">Ronny Toribio Blanco</p>
-//           </div>
-//         </div>
-//         <div className="resumeCard-infoRow">
-//           <div className="resumeCard-infoIcon">
-//             <Clock size={16} strokeWidth={1.75} />
-//           </div>
-//           <div>
-//             <p className="resumeCard-infoLabel">Latest upload</p>
-//             <p className="resumeCard-infoValue">{"Never uploaded"}</p>
-//           </div>
-//         </div>
-//       </div>
-
-
-//     </div>
-//   )
-// }
-
-// export default Resume
-const Resume = () => { 
+const Resume = ({resumeFile}) => { 
  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [pendingFile, setPendingFile] = useState(null);
@@ -61,13 +10,14 @@ const Resume = () => {
   const fileInputRef = useRef(null);
  
   // Mock resume state — replace with real data from your backend
-  const [resume, setResume] = useState({
-    fileName: "Ronny_Toribio_Resume.pdf",
-    uploadedAt: "2026-06-20T14:32:00Z",
-  });
+  const [resume, setResume] = useState({});
  
+  useEffect(() => {
+    setResume(resumeFile)
+  }, []);
+
   const formattedDate = resume
-    ? new Date(resume.uploadedAt).toLocaleString("en-US", {
+    ? new Date(resume.created_at).toLocaleString("en-US", {
         month: "short",
         day: "numeric",
         year: "numeric",
@@ -93,11 +43,13 @@ const Resume = () => {
  
   const handleConfirmUpload = () => {
     if (!pendingFile) return;
+    console.log(pendingFile)
+    router.patch('/admin', {admin: {resume: pendingFile}}, {forceFormData: true})
     // Mock only — swap this for your real upload call, e.g.:
     // await fetch('/resumes', { method: 'POST', body: formData })
     setResume({
-      fileName: pendingFile.name,
-      uploadedAt: new Date().toISOString(),
+      filename: pendingFile.name,
+      uploaded_at: new Date().toISOString(),
     });
     closeModal();
   };
@@ -112,7 +64,7 @@ const Resume = () => {
           </div>
           <div className="resumeCard-previewText">
             <p className="resumeCard-fileName">
-              {resume ? resume.fileName : "No resume uploaded"}
+              {resume ? resume.filename : "No resume uploaded"}
             </p>
             <p className="resumeCard-hint">Click to upload a new version</p>
           </div>
