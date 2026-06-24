@@ -16,7 +16,9 @@ class AdminController < ApplicationController
       QrSerializer.new(qr_code).as_hash
     end
 
-    render inertia: "containers/admin/Admin", props: { blogs:, projects:, qrCodes: }
+    resumeFile = current_admin.resume.blob
+
+    render inertia: "containers/admin/Admin", props: { blogs:, projects:, qrCodes:, resumeFile: }
   end
 
   def sign_admin_in
@@ -51,6 +53,6 @@ class AdminController < ApplicationController
   private
 
   def admin_params
-    params.require(:admin).permit(projects_order: [])
+    params.require(:admin).permit(:resume, projects_order: [])
   end
 end
