@@ -11,7 +11,7 @@ import Resume from "../../component/Admin/Resume";
 
 export default function Admin() {
 
-  const { blogs, projects, qrCodes } = usePage().props
+  const { blogs, projects, qrCodes, resumeFile} = usePage().props
   
   const [editBlog, setEditBlog] = useState({})
   const blogModalRef = useRef(null)
@@ -53,7 +53,7 @@ export default function Admin() {
       </header>
 
       <section className="dashboard">
-        <Resume />
+        <Resume resumeFile={resumeFile}/>
         <Table 
           name={"projects"} 
           modalRef={projectModalRef} 
