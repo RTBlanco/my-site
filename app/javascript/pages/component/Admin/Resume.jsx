@@ -9,7 +9,6 @@ const Resume = ({resumeFile}) => {
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef(null);
  
-  // Mock resume state — replace with real data from your backend
   const [resume, setResume] = useState({});
  
   useEffect(() => {
@@ -43,10 +42,9 @@ const Resume = ({resumeFile}) => {
  
   const handleConfirmUpload = () => {
     if (!pendingFile) return;
-    console.log(pendingFile)
+
     router.patch('/admin', {admin: {resume: pendingFile}}, {forceFormData: true})
-    // Mock only — swap this for your real upload call, e.g.:
-    // await fetch('/resumes', { method: 'POST', body: formData })
+
     setResume({
       filename: pendingFile.name,
       uploaded_at: new Date().toISOString(),
