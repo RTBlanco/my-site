@@ -1319,48 +1319,302 @@ textarea.form-input::-webkit-resizer { display: none; }
   border-color: var(--orange-yellow-crayola);
 }
 
-#admin-resume {
-  border: 1px solid red;
-  padding: 30px;
-  height: 250px;
 
+
+.resumeCard-infoIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  /* min-height: 250px; */
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fbbf24;
 }
 
-#admin-resume .file {
-  border: 1px solid red;
-  width: 350px;
 
+.resumeCard-info {
+  flex: 1;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1a1a1a;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 16px;
+}
+ 
+.resumeCard-infoRow {
+  display: flex;
   align-items: center;
+  gap: 12px;
 }
-
-.file-name {
-  color: white;
+ 
+.resumeCard-infoIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fbbf24;
 }
-
-.detail {
-  color: rgb(76, 76, 76);
+ 
+.resumeCard-infoLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
 }
-
-
-#admin-resume .resume-date {
-  border: 1px solid red;
-  width: 350px;
+ 
+.resumeCard-infoValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 2px 0 0;
 }
-
-#admin-resume-image {
-  width: 60px;
-  height: 80px;
+ 
+.resumeCard-preview {
+  position: relative;
+  flex: 1;
   border-radius: 12px;
-  object-fit: cover;
-  background: #333;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1a1a1a;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.15s ease;
+}
+ 
+.resumeCard-preview:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+ 
+.resumeCard-preview:hover .resumeCard-previewOverlay {
+  background: rgba(255, 255, 255, 0.03);
+}
+ 
+.resumeCard-previewOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background 0.15s ease;
+  pointer-events: none;
+}
+ 
+.resumeCard-previewInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 32px 0;
+  gap: 12px;
+}
+ 
+.resumeCard-iconSquare {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background: linear-gradient(to bottom right, #6d6c6c, #ffdb70);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.resumeCard-previewText {
+  text-align: center;
+  padding: 0 16px;
+}
+ 
+.resumeCard-fileName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  margin: 0;
+}
+ 
+.resumeCard-hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 4px 0 0;
+}
+
+.resumeCard-wrapper {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+
+.resumeCard-modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 16px;
+}
+ 
+.resumeCard-modal {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+}
+ 
+.resumeCard-modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 20px;
+}
+ 
+.resumeCard-modalTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+ 
+.resumeCard-closeBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  transition: color 0.15s ease;
+}
+ 
+.resumeCard-closeBtn:hover {
+  color: #ffffff;
+}
+ 
+.resumeCard-dropzone {
+  border-radius: 8px;
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+ 
+.resumeCard-dropzone:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+ 
+.resumeCard-dropzone.is-dragging {
+  border-color: rgba(251, 191, 36, 0.6);
+  background: rgba(251, 191, 36, 0.05);
+}
+ 
+.resumeCard-dropzoneText {
+  text-align: center;
+}
+ 
+.resumeCard-dropzoneText p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+ 
+.resumeCard-dropzoneText .browse {
+  color: #fbbf24;
+}
+ 
+.resumeCard-dropzoneSubtext {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 4px 0 0;
+}
+ 
+.resumeCard-fileInput {
+  display: none;
+}
+ 
+.resumeCard-pendingFile {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 12px;
+}
+ 
+.resumeCard-pendingFile span {
+  font-size: 14px;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ 
+.resumeCard-pendingFileIcon {
+  flex-shrink: 0;
+  color: #818cf8;
+}
+ 
+.resumeCard-modalActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+ 
+.resumeCard-btn {
+  flex: 1;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+ 
+.resumeCard-btnCancel {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+}
+ 
+.resumeCard-btnCancel:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+ 
+.resumeCard-btnUpload {
+  border: none;
+  background: #fbbf24;
+  color: #000000;
+  font-weight: 600;
+}
+ 
+.resumeCard-btnUpload:hover:not(:disabled) {
+  background: #fcd34d;
+}
+ 
+.resumeCard-btnUpload:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
 
